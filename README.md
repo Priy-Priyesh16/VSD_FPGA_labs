@@ -1,4 +1,6 @@
 # VSD_FPGA_labs
-Lab_excercises for VSD FPGA workshop
+Learnings and Lab Excersices 
 ----------------------------------------------
 # Day 1
+>> **Basics of FPGA**
+>> 
