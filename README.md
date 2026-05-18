@@ -1,4 +1,4 @@
 # VSD_FPGA_labs
 Lab_excercises for VSD FPGA workshop
 ----------------------------------------------
-#Day 1
+# Day 1
