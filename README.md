@@ -14,3 +14,5 @@ Learnings and Lab Excersices
 One time Programmable                                |           Reprogrammable
 Expensive when to be used in less quantity           |           Expensive when to be used in large quantity
 Used for specific purposes                           |      Can be used for different applications as it is reprogramable
+RTL to Layout                                        |      RTL to Bitstream
+layout to be sent to the foundary                    |    bitstream can be directly programmed to a FPGA
