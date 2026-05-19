@@ -38,5 +38,5 @@ If there is a 2:1 mux, the output of the truth table will act as an input to the
 ### **FPGA Design Flow**
 <img width="1051" height="909" alt="image" src="https://github.com/user-attachments/assets/52c1ec6c-ad77-493c-9785-0f0ea3adaec8" />
 First the Architeure is to be finalized and decided. The the RTL code is written, the written code is supposed to be synthesisable, once the simulation is completed  
-Synthesis is then doen in which a timing analysis is performed, also the pin asignment is done in tis stage using the constraints file.  
+Synthesis is then done in which a timing analysis is performed, also the pin asignment is done in tis stage using the constraints file.  
 Implmentation is then performed after a succesful synhtesis, in this stage also a timing analysis is performed, slack hold and setup should be possitve for the deisgn to behave correctly.  
