@@ -9,7 +9,10 @@ Learnings and Lab Excersices
  3. FPGA - Feild Programmable Gate Array
  These are all reprogrammable logic devices as per our design. Helpful in prototyping.
  ### **ASIC vs FPGA**
-_ASIC_                                                                _FPGA_
+_ASIC_       |                                                         _FPGA_
+---
 One time Programmable                                            Reprogrammable
+---
 Expensive when to be used in less quantity                       Expensive when to be used in large quantity
+---
 Used for specific purposes                                       Can be used for different applications as it is reprogramable
