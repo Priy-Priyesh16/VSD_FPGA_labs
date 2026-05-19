@@ -56,6 +56,5 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 **Schematic_in_elaborated_design**
 <img width="1888" height="902" alt="image" src="https://github.com/user-attachments/assets/f8d05f19-7ac7-4bd8-89de-6ec9629fa8de" />
 
-
 Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
 
