@@ -49,3 +49,10 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 ### **Different ways of programming a FPGA board**
 1. Using JTAG
 2. Using VIO
+
+##**UP_Counter in vivado**
+<img width="1610" height="660" alt="image" src="https://github.com/user-attachments/assets/ef79419a-399a-4de1-b847-4922a9f172bf" />
+
+
+Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
+
