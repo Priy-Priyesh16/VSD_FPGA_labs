@@ -51,7 +51,10 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 2. Using VIO
 
 ##**UP_Counter in vivado**
+**SIMULATION**
 <img width="1610" height="660" alt="image" src="https://github.com/user-attachments/assets/ef79419a-399a-4de1-b847-4922a9f172bf" />
+**Schematic_in_elaborated_design**
+<img width="1888" height="902" alt="image" src="https://github.com/user-attachments/assets/f8d05f19-7ac7-4bd8-89de-6ec9629fa8de" />
 
 
 Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
