@@ -34,3 +34,6 @@ layout to be sent to the foundary                    |    bitstream can be direc
 It basically consists of muxes in side them, based on the input provided the data path is decided.  
 If there is a 2:1 mux, the output of the truth table will act as an input to the LUT ( this is handled by the Tool)  
 <img width="983" height="869" alt="image" src="https://github.com/user-attachments/assets/7232fc5a-7c60-45a3-9e8d-11465293e2a5" />  
+
+### **FPGA Design Flow **
+<img width="1051" height="909" alt="image" src="https://github.com/user-attachments/assets/52c1ec6c-ad77-493c-9785-0f0ea3adaec8" />
