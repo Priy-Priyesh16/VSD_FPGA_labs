@@ -40,3 +40,12 @@ If there is a 2:1 mux, the output of the truth table will act as an input to the
 First the Architeure is to be finalized and decided. The the RTL code is written, the written code is supposed to be synthesisable, once the simulation is completed  
 Synthesis is then done in which a timing analysis is performed, also the pin asignment is done in tis stage using the constraints file.  
 Implmentation is then performed after a succesful synhtesis, in this stage also a timing analysis is performed, slack hold and setup should be possitve for the deisgn to behave correctly.  
+### **What cannot be synthesised**
+1. Delay interms of # ( only to be used in simulation).
+2. initial statement
+3. infinite loops
+4. Dynamic Memory Allocation
+
+### **Different ways of programming a FPGA board**
+1. Using JTAG
+2. Using VIO
