@@ -33,3 +33,4 @@ layout to be sent to the foundary                    |    bitstream can be direc
 ### **LUT Structure**
 It basically consists of muxes in side them, based on the input provided the data path is decided.  
 If there is a 2:1 mux, the output of the truth table will act as an input to the LUT ( this is handled by the Tool)  
+<img width="983" height="869" alt="image" src="https://github.com/user-attachments/assets/7232fc5a-7c60-45a3-9e8d-11465293e2a5" />  
