@@ -28,7 +28,8 @@ layout to be sent to the foundary                    |    bitstream can be direc
 >CLB (Configurable Logic Block) : These consistsof LUT, FlipFlopsand Multiplexer. 
 >Interconnects: These are connecting wires between the differnet CLBS and IO pads.
 <img width="993" height="687" alt="image" src="https://github.com/user-attachments/assets/be715e02-6d4b-4c11-b97a-490de55b054a" />
->The FPGA may Have internal memory inteh form of RAM blocks and clock tiles as well. 
+>The FPGA may Have internal memory inteh form of RAM blocks and clock tiles as well.
+
 ### **LUT Structure**
 It basically consists of muxes in side them, based on the input provided the data path is decided.  
 If there is a 2:1 mux, the output of the truth table will act as an input to the LUT ( this is handled by the Tool)  
