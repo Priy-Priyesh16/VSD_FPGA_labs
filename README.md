@@ -16,3 +16,9 @@ Expensive when to be used in less quantity           |           Expensive when 
 Used for specific purposes                           |      Can be used for different applications as it is reprogramable
 RTL to Layout                                        |      RTL to Bitstream
 layout to be sent to the foundary                    |    bitstream can be directly programmed to a FPGA
+### **Aplications of FPGA**
+1. Hardware Acceleration
+2. Space Technology
+3. Defence & Research
+4. High Speed Computing
+5. ML & AI applications
