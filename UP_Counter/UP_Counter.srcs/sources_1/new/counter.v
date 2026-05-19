@@ -38,19 +38,20 @@ module counter
   begin
     if(rst)
     begin
-       counter_out <= {(COUNTER_WIDTH){1'b0}};
        div_clk     <= 1'b0;
        delay_count <= {(DWIDTH){1'b0}};
+       counter_out <= {(COUNTER_WIDTH){1'b0}};
     end
     else
     begin
       if(delay_count == 'd200)
         begin
-           div_clk = ~div_clk;
+           div_clk <= ~div_clk;
+           delay_count <= {(DWIDTH){1'b0}};
         end
       else
         begin
-            delay_count <= delay_count + 1'b1;
+            delay_count <= delay_count + 4'd1;
         end
     end
   end
@@ -63,7 +64,7 @@ module counter
     end
     else
     begin
-       counter_out <= counter_out + 'd1;
+       counter_out <= counter_out + 4'd1;
     end
   end
   endmodule

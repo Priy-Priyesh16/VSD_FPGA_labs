@@ -21,26 +21,33 @@
 
 
 module tb_counter();
+localparam  DWIDTH =24;
+localparam COUNTER_WIDTH = 4;
 
 reg clk,rst;
-wire counter_out;
+wire [COUNTER_WIDTH - 1 :0] counter_out;
 
-counter dut(clk,rst,counter_out);
+
+
+counter
+#(   
+.DWIDTH (DWIDTH),
+.COUNTER_WIDTH (COUNTER_WIDTH)
+)
+dut
+(.clk(clk),.rst(rst),.counter_out(counter_out));
+
+initial clk = 0;
+always #10 clk = ~clk;
 
 initial begin
 
-clk = 0; 
 rst = 1;
-
-#10
-
+#50
 rst = 0;
 end
 
-always
-begin
-#10 clk = ~clk;
-end
+
 
 
 endmodule

@@ -1,0 +1,15 @@
+set_property IOSTANDARD LVCMOS33 [get_ports {counter_out[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {counter_out[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {counter_out[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {counter_out[0]}]
+set_property PACKAGE_PIN A15 [get_ports {counter_out[3]}]
+set_property PACKAGE_PIN A14 [get_ports {counter_out[2]}]
+set_property PACKAGE_PIN A12 [get_ports {counter_out[1]}]
+set_property PACKAGE_PIN A10 [get_ports {counter_out[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports rst]
+set_property PACKAGE_PIN A18 [get_ports clk]
+set_property PACKAGE_PIN A17 [get_ports rst]
+
+
+create_clock -name clk -period 10.000 -waveform {0.000 5.000} [get_ports clk]
