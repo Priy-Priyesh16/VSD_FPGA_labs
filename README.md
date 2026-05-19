@@ -22,3 +22,5 @@ layout to be sent to the foundary                    |    bitstream can be direc
 3. Defence & Research
 4. High Speed Computing
 5. ML & AI applications
+### **FPGA Architecture**
+<img width="1077" height="620" alt="image" src="https://github.com/user-attachments/assets/fc6461a4-8252-48f1-8df6-b9fcb6df94bf" />
