@@ -24,3 +24,6 @@ layout to be sent to the foundary                    |    bitstream can be direc
 5. ML & AI applications
 ### **FPGA Architecture**
 <img width="1077" height="620" alt="image" src="https://github.com/user-attachments/assets/fc6461a4-8252-48f1-8df6-b9fcb6df94bf" />
+Programmable  IO : These are the link beteen the peripherials and the fpga. They basically act as a bridge between the outer world and FPGA.
+CLB (Configurable Logic Block) : These consistsof LUT, FlipFlopsand Multiplexer. 
+Interconnects: These are connecting wires between the differnet CLBS and IO pads.
