@@ -52,7 +52,8 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 
 ##**UP_Counter in vivado**
 **SIMULATION**
-<img width="1610" height="660" alt="image" src="https://github.com/user-attachments/assets/ef79419a-399a-4de1-b847-4922a9f172bf" />
+<img width="1910" height="653" alt="image" src="https://github.com/user-attachments/assets/db63b610-3201-4482-97cc-3ecf667281be" />
+
 **Schematic_in_elaborated_design**
 <img width="1888" height="902" alt="image" src="https://github.com/user-attachments/assets/f8d05f19-7ac7-4bd8-89de-6ec9629fa8de" />
 
