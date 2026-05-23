@@ -92,6 +92,7 @@ It is helpful in accelarating the domain specific needs since prototyping and cu
 ### Flow of Process.
 <img width="923" height="699" alt="image" src="https://github.com/user-attachments/assets/494bd7de-59f7-4ea3-8e2f-8ce07d9d23aa" />
 Link to the above image is [here](https://openfpga.readthedocs.io/en/master/_images/openfpga_framework.svg)
+
 Open FPGA supports the following
 1. Verilog
 2. SDC
