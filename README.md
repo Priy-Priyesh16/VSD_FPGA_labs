@@ -214,3 +214,8 @@ $VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py <location of your design file> <locat
 ```
 <img width="743" height="249" alt="image" src="https://github.com/user-attachments/assets/e9fc1aac-0dc9-4ffe-9e96-a02d25907042" />
 
+It can be seen in the above image thatcertain .blif file are generated. 
+
+Now to perform rest of the steps. We will pass the generated .blif file and the architecture on which we wish to syht / PnR our design.
+
+
