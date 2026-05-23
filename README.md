@@ -166,6 +166,6 @@ Setting up the working directory
 | <img width="834" height="647" alt="image" src="https://github.com/user-attachments/assets/61255ef0-6d82-47d7-b9dd-e60c020b4d21" /> | <img width="541" height="369" alt="image" src="https://github.com/user-attachments/assets/673cddc2-c629-40d5-9e98-048941add737" /> |
 | Routing Critical Paths | Routing critical path delays highlighted    |
 | <img width="738" height="391" alt="image" src="https://github.com/user-attachments/assets/c5abd178-2866-4c38-b980-ef999f5c9fa6" /> | <img width="734" height="375" alt="image" src="https://github.com/user-attachments/assets/a8962855-aa09-470f-a663-fa2bea87c07e" /> |
-| Block pin Utilization|     |
-| <img width="814" height="688" alt="image" src="https://github.com/user-attachments/assets/df2c01a8-ece8-43e8-a905-c7425c6528f7" /> |  |
+| Block pin Utilization| Congestion with nets|
+| <img width="814" height="688" alt="image" src="https://github.com/user-attachments/assets/df2c01a8-ece8-43e8-a905-c7425c6528f7" /> | <img width="968" height="939" alt="image" src="https://github.com/user-attachments/assets/2f02d994-e5a0-46aa-98c0-cb8ccd1800d3" /> |
 
