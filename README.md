@@ -168,4 +168,5 @@ Setting up the working directory
 | <img width="738" height="391" alt="image" src="https://github.com/user-attachments/assets/c5abd178-2866-4c38-b980-ef999f5c9fa6" /> | <img width="734" height="375" alt="image" src="https://github.com/user-attachments/assets/a8962855-aa09-470f-a663-fa2bea87c07e" /> |
 | Block pin Utilization| Congestion with nets|
 | <img width="814" height="688" alt="image" src="https://github.com/user-attachments/assets/df2c01a8-ece8-43e8-a905-c7425c6528f7" /> | <img width="968" height="939" alt="image" src="https://github.com/user-attachments/assets/2f02d994-e5a0-46aa-98c0-cb8ccd1800d3" /> |
-
+|Total Routing Cost | post routing cost |
+|<img width="973" height="936" alt="image" src="https://github.com/user-attachments/assets/93e619b1-4c46-4543-9ea5-4915de7b04ec" /> |<img width="1647" height="889" alt="image" src="https://github.com/user-attachments/assets/0eff587e-4362-4523-9d87-24c916670a90" /> |
