@@ -50,6 +50,8 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 1. Using JTAG
 2. Using VIO
 
+### **VIO- Virtual input output**
+Theses are basically a virtual way of montioring the signals in real time on an ILA (integrated logic analyzer). 
 > # **Day_1_Lab**
 
 > ## **UP_Counter in vivado**
