@@ -102,10 +102,10 @@ Open FPGA supports the following
 ---
 Key Stages duing the Process:
 1. VTR
-  - a. Verilog to Routing
-  - Tools used:
-  - I. Odin II (Elaboration & Synthesis)
-  - II. ABC (Logic Optimization & technology Mapping to LUTs)
+   - a. Verilog to Routing
+   - Tools used:
+   - I. Odin II (Elaboration & Synthesis)
+   - II. ABC (Logic Optimization & technology Mapping to LUTs)
 2. VPR
    - a. Pack the Netlist
    - b. Placement
