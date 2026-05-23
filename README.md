@@ -138,6 +138,14 @@ COmmand: > $VTR_ROOT/vpr/vpr \
     $VTR_ROOT/vtr_flow/arch/timing/EArch.xml \
     $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif \
     --route_chan_width 100
+---
+## VTR FLOW
+---
+VTR basically has three stages 
+   1. Elaboration & Synthesis (ODIN II)
+   2. Logic Optimization & Technology Mapping (ABC)
+   3. Packing, Placement, Routing & Timing Analysis (VPR)
+---
 # Day 2 LAB
 ---
 ## Running VTR on pre synthesised circuit
