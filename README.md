@@ -56,6 +56,9 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 > **SIMULATION**
 > <img width="1910" height="653" alt="image" src="https://github.com/user-attachments/assets/db63b610-3201-4482-97cc-3ecf667281be" />
 
+> **PIN_Mapping**
+> <img width="1566" height="469" alt="image" src="https://github.com/user-attachments/assets/40a91643-ab59-4f2e-aefb-5e0d8fd10f65" />
+
 > **Schematic_in_elaborated_design**
 > <img width="1903" height="909" alt="image" src="https://github.com/user-attachments/assets/d7900ebc-3cc9-40aa-8c4d-c6b5ec45b985" />
 
