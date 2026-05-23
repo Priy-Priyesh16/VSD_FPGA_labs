@@ -122,3 +122,15 @@ Key Stages duing the Process:
 
 ### VTR FLOW
 <img width="905" height="681" alt="image" src="https://github.com/user-attachments/assets/47d96733-614c-4264-b57d-9f9e9dc2b31d" />
+
+### Steps to run the tool 
+   -Build Open FPGA [steps here](https://openfpga.readthedocs.io/en/master/tutorials/getting_started/compile/)
+   -Build VTR [steps here](https://docs.verilogtorouting.org/en/latest/quickstart/#)
+   -Run VPR on pre synthesised Circuit
+
+   another path could be
+   first two steps common (build open fpga and VTR (should be one time process))
+   - run on a custom deisgn
+   - also the entoire process can be automated using the scripts to automate the runs of odin II and ABC.
+---
+
