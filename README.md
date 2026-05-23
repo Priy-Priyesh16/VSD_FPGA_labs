@@ -138,3 +138,7 @@ COmmand: > $VTR_ROOT/vpr/vpr \
     $VTR_ROOT/vtr_flow/arch/timing/EArch.xml \
     $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif \
     --route_chan_width 100
+# Day 2 LAB
+---
+Setting up the working directory
+<img width="937" height="289" alt="image" src="https://github.com/user-attachments/assets/40cb9439-2e22-4e7d-b708-f933a3b7290f" />
