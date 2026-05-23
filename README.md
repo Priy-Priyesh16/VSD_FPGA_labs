@@ -65,5 +65,9 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 > **Timing Summary**
 > <img width="1568" height="654" alt="image" src="https://github.com/user-attachments/assets/275e2126-1fdf-42e0-aff0-85cf5ff92f2d" />
 
+> **Utilization Report**
+> <img width="1920" height="821" alt="image" src="https://github.com/user-attachments/assets/524af62c-03db-451d-865a-9dc49510c8f5" />
+
+
 > Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
 
