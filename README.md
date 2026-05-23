@@ -50,14 +50,14 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 1. Using JTAG
 2. Using VIO
 
-# **Day_1_Lab**
+> # **Day_1_Lab**
 
-## **UP_Counter in vivado**
-**SIMULATION**
-<img width="1910" height="653" alt="image" src="https://github.com/user-attachments/assets/db63b610-3201-4482-97cc-3ecf667281be" />
+> ## **UP_Counter in vivado**
+> **SIMULATION**
+> <img width="1910" height="653" alt="image" src="https://github.com/user-attachments/assets/db63b610-3201-4482-97cc-3ecf667281be" />
 
-**Schematic_in_elaborated_design**
-<img width="1903" height="909" alt="image" src="https://github.com/user-attachments/assets/d7900ebc-3cc9-40aa-8c4d-c6b5ec45b985" />
+> **Schematic_in_elaborated_design**
+> <img width="1903" height="909" alt="image" src="https://github.com/user-attachments/assets/d7900ebc-3cc9-40aa-8c4d-c6b5ec45b985" />
 
-Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
+> Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
 
