@@ -80,4 +80,5 @@ Theses are basically a virtual way of montioring the signals in real time on an 
 ---------------------------------------------------
 
 ## Day 2
-
+### Open FPGA Introduction
+OpenFPGA is the first open‑source FPGA IP generator, enabling highly customizable FPGA architectures. With built‑in Verilog‑to‑bitstream flows and self‑testing verification, it empowers agile prototyping and democratizes FPGA design for researchers and chip developers.
