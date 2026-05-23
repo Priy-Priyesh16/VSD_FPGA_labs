@@ -174,3 +174,11 @@ Setting up the working directory
 
 Looking at the timing report we found that there was not constraint put up so we were getting a negative slack, as the time to arrive was not specified. 
 <img width="1229" height="766" alt="image" src="https://github.com/user-attachments/assets/6dfc2222-1386-4663-b714-74fb831d74f3" />
+
+So to fix this we added a timing constraint file 
+```
+create_clock -period 10 -name pclk
+set_input_delay -clock pclk -max 0 [get_ports {*}]
+set_output_delay -clock pclk -max 0 [get_ports {*}]
+```
+
