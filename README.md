@@ -120,3 +120,5 @@ Key Stages duing the Process:
    - f. power
 4. Post Synthesis netlist.
 
+### VTR FLOW
+<img width="905" height="681" alt="image" src="https://github.com/user-attachments/assets/47d96733-614c-4264-b57d-9f9e9dc2b31d" />
