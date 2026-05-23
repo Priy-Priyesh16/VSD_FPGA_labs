@@ -191,3 +191,7 @@ $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif \
 --sdc_file <complete file path here with out bracket without quotes> 
 
 ```
+
+Doing this is now giving is slack based on the calulation done as per constraint file.
+
+<img width="1218" height="654" alt="image" src="https://github.com/user-attachments/assets/9296f26e-a5a6-4e9f-b680-f22f50e66c48" />
