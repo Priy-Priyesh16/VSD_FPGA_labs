@@ -82,3 +82,13 @@ Theses are basically a virtual way of montioring the signals in real time on an 
 ## Day 2
 ### Open FPGA Introduction
 OpenFPGA is the first open‑source FPGA IP generator, enabling highly customizable FPGA architectures. With built‑in Verilog‑to‑bitstream flows and self‑testing verification, it empowers agile prototyping and democratizes FPGA design for researchers and chip developers.
+Open Source framework whcih can be used to quickly genreate a fabric fro a custom FPGA ready to be used in feilds where there is a need of custom fpga with quick results. 
+How is this better that traditional FPGAs?
+Automation technique is used heavily throughout the process, 
+This reduces the Development cycle of a new FPGA
+Also has accessto open source design tools. 
+It is helpful in accelarating the domain specific needs since prototyping and customizing a FPGA is expensive and time consuming. 
+
+### Flow of Process.
+<img width="923" height="699" alt="image" src="https://github.com/user-attachments/assets/494bd7de-59f7-4ea3-8e2f-8ce07d9d23aa" />
+Link to the above image is [here](https://openfpga.readthedocs.io/en/master/_images/openfpga_framework.svg)
