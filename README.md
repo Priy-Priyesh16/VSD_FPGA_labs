@@ -140,6 +140,8 @@ COmmand: > $VTR_ROOT/vpr/vpr \
     --route_chan_width 100
 # Day 2 LAB
 ---
+## Running VTR on pre synthesised circuit
+---
 Setting up the working directory
 <img width="937" height="289" alt="image" src="https://github.com/user-attachments/assets/40cb9439-2e22-4e7d-b708-f933a3b7290f" />
 
