@@ -170,3 +170,7 @@ Setting up the working directory
 | <img width="814" height="688" alt="image" src="https://github.com/user-attachments/assets/df2c01a8-ece8-43e8-a905-c7425c6528f7" /> | <img width="968" height="939" alt="image" src="https://github.com/user-attachments/assets/2f02d994-e5a0-46aa-98c0-cb8ccd1800d3" /> |
 |Total Routing Cost | post routing cost |
 |<img width="973" height="936" alt="image" src="https://github.com/user-attachments/assets/93e619b1-4c46-4543-9ea5-4915de7b04ec" /> |<img width="1647" height="889" alt="image" src="https://github.com/user-attachments/assets/0eff587e-4362-4523-9d87-24c916670a90" /> |
+----
+
+Looking at the timing report we found that there was not constraint put up so we were getting a negative slack, as the time to arrive was not specified. 
+<img width="1229" height="766" alt="image" src="https://github.com/user-attachments/assets/6dfc2222-1386-4663-b714-74fb831d74f3" />
