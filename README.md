@@ -154,3 +154,7 @@ Setting up the working directory
 **Once the Command above is ran. We get a full report**
 
 <img width="1069" height="705" alt="image" src="https://github.com/user-attachments/assets/b7d23a7b-0ad0-47dd-9426-a467e254d291" />
+
+**All the reports are generated and sved in the working directory**
+
+<img width="998" height="200" alt="image" src="https://github.com/user-attachments/assets/da5d95c0-1c18-42ef-b629-6aa8a224d995" />
