@@ -151,5 +151,6 @@ Setting up the working directory
    <img width="1908" height="913" alt="image" src="https://github.com/user-attachments/assets/910b34f1-ed0b-4a6d-b16d-51b4ba8d7ca8" />
    <img width="1346" height="873" alt="routing_pre_synth_circuit" src="https://github.com/user-attachments/assets/2a734421-7fa9-4c25-81fe-7f5c7f9fa735" />
 
-Once the Command aboveis ran. We get a full report
+**Once the Command above is ran. We get a full report**
+
 <img width="1069" height="705" alt="image" src="https://github.com/user-attachments/assets/b7d23a7b-0ad0-47dd-9426-a467e254d291" />
