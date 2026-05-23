@@ -203,3 +203,14 @@ $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif \
 Doing this is now giving is slack based on the calulation done as per constraint file.
 
 <img width="1218" height="654" alt="image" src="https://github.com/user-attachments/assets/9296f26e-a5a6-4e9f-b680-f22f50e66c48" />
+---
+
+## Running the entire flow manually yet using the python_flow.py script. 
+---
+Run this command
+
+```
+$VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py <location of your design file> <location of rchfile>$VTR_ROOT/vtr_flow/arch/timing/EArch.xml <a temp dir to store nay file generated during run time for temporary purpiose>-temp_dir . --route_chan_width 100
+```
+<img width="743" height="249" alt="image" src="https://github.com/user-attachments/assets/e9fc1aac-0dc9-4ffe-9e96-a02d25907042" />
+
