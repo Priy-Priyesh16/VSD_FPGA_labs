@@ -224,8 +224,9 @@ $VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml up_counter --circuit_
 |Block_inernals|Block Pin utilization|
 |---|---|
 | <img width="1600" height="560" alt="image" src="https://github.com/user-attachments/assets/6c8914c2-2e61-424c-baca-4c944e947df6" /> | <img width="1616" height="815" alt="image" src="https://github.com/user-attachments/assets/d94bab33-c71f-4a7a-97d0-17100cd03ad7" /> |
-|Routing |Congestion|
-|<img width="906" height="832" alt="image" src="https://github.com/user-attachments/assets/cfb789c2-23c1-41a4-9b4b-37a48f7b545e" /> |
+|Routing |Congestion with nets|
+|<img width="906" height="832" alt="image" src="https://github.com/user-attachments/assets/cfb789c2-23c1-41a4-9b4b-37a48f7b545e" /> | <img width="862" height="812" alt="image" src="https://github.com/user-attachments/assets/a4b1114c-62aa-41bb-af5b-828bbd520af3" /> |
+
 
 
 
