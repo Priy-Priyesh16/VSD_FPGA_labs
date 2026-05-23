@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache C:/Xilinx/Vivado/2018.2/bin/.Xil/Vivado-852-DESKTOP-16DTLPF/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/Admin/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1668-DESKTOP-16DTLPF/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
@@ -40,6 +40,9 @@ read_verilog -library xil_defaultlib D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/project_files_vivado/project_counter/project_counter.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/project_files_vivado/project_counter/project_counter.srcs/constrs_1/new/constraints.xdc]
+
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 

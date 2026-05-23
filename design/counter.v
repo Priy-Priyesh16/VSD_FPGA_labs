@@ -14,7 +14,7 @@ if(rst)
    begin
     delay_count <= 24'd0;
     div_clk <= 1'd0;
-    counter_out <=4'd0;
+    //counter_out <=4'd0;
    end
 else
  begin
