@@ -1,7 +1,7 @@
 # VSD_FPGA_labs
 Learnings and Lab Excersices 
 ----------------------------------------------
-## Day 1
+# Day 1
 ### **Basics of FPGA**
  History of Programmable logic devices
  1. Programmable logic array 
@@ -52,7 +52,7 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 
 ### **VIO- Virtual input output**
 Theses are basically a virtual way of montioring the signals in real time on an ILA (integrated logic analyzer). 
-# **Day_1_Lab**
+## **Day_1_Lab**
 
 > ## **UP_Counter in vivado**
 > **SIMULATION**
@@ -79,7 +79,7 @@ Theses are basically a virtual way of montioring the signals in real time on an 
 > Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
 ---------------------------------------------------
 
-## Day 2
+# Day 2
 ### Open FPGA Introduction
 OpenFPGA is the first open‑source FPGA IP generator, enabling highly customizable FPGA architectures. With built‑in Verilog‑to‑bitstream flows and self‑testing verification, it empowers agile prototyping and democratizes FPGA design for researchers and chip developers.
 Open Source framework whcih can be used to quickly genreate a fabric fro a custom FPGA ready to be used in feilds where there is a need of custom fpga with quick results. 
@@ -133,4 +133,8 @@ Key Stages duing the Process:
    - run on a custom deisgn
    - also the entoire process can be automated using the scripts to automate the runs of odin II and ABC.
 ---
-
+## Command to run VPR on a Pre_Synthesised circuit
+COmmand: > $VTR_ROOT/vpr/vpr \
+    $VTR_ROOT/vtr_flow/arch/timing/EArch.xml \
+    $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif \
+    --route_chan_width 100
