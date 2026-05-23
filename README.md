@@ -99,4 +99,24 @@ Open FPGA supports the following
 2. SDC
 3. Bitstream generation
 4. FPGA-Spice
+---
+Key Stages duing the Process:
+1. VTR
+  a. Verilog to Routing
+  Tools used:
+  I. Odin II (Elaboration & Synthesis)
+  II. ABC (Logic Optimization & technology Mapping to LUTs)
+2. VPR
+   a. Pack the Netlist
+   b. Placement
+   c. Routing
+   d. Timing Analysis
+3. After VTR & VPR : Output Statistics is also published like
+   a. Min no of tracks needed
+   b. route
+   c. total wire length
+   d. circuit speed
+   e. area
+   f. power
+4. Post Synthesis netlist.
 
