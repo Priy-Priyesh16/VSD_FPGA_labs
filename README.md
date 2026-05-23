@@ -50,7 +50,9 @@ Implmentation is then performed after a succesful synhtesis, in this stage also 
 1. Using JTAG
 2. Using VIO
 
-##**UP_Counter in vivado**
+# **Day_1_Lab**
+
+## **UP_Counter in vivado**
 **SIMULATION**
 <img width="1910" height="653" alt="image" src="https://github.com/user-attachments/assets/db63b610-3201-4482-97cc-3ecf667281be" />
 
