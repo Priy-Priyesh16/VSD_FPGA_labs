@@ -142,3 +142,7 @@ COmmand: > $VTR_ROOT/vpr/vpr \
 ---
 Setting up the working directory
 <img width="937" height="289" alt="image" src="https://github.com/user-attachments/assets/40cb9439-2e22-4e7d-b708-f933a3b7290f" />
+
+   -RUnning the command 
+   -$VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif  --route_chan_width 100 --disp on
+   <img width="1908" height="913" alt="image" src="https://github.com/user-attachments/assets/910b34f1-ed0b-4a6d-b16d-51b4ba8d7ca8" />
