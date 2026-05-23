@@ -77,4 +77,7 @@ Theses are basically a virtual way of montioring the signals in real time on an 
 ><img width="1920" height="834" alt="image" src="https://github.com/user-attachments/assets/63c340ff-3a07-460d-9d08-b6cb89231f19" />
 
 > Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
+---------------------------------------------------
+
+## Day 2
 
