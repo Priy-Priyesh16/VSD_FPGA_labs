@@ -227,6 +227,12 @@ $VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml up_counter --circuit_
 |Routing |Congestion with nets|
 |<img width="906" height="832" alt="image" src="https://github.com/user-attachments/assets/cfb789c2-23c1-41a4-9b4b-37a48f7b545e" /> | <img width="862" height="812" alt="image" src="https://github.com/user-attachments/assets/a4b1114c-62aa-41bb-af5b-828bbd520af3" /> |
 
-
+----
+Generating post implemetation netlist
+```
+$VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml up_counter --circuit_file up_counter.pre-vpr.blif --gen_post_synthesis_netlist on
+```
+Runing this will generate a .v and .sdf file
+<img width="731" height="87" alt="image" src="https://github.com/user-attachments/assets/27de1462-71ec-470f-abbe-a2c15014c7db" />
 
 
