@@ -1,0 +1,8 @@
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto eb64ecf05ffb40afa35f5c9031a12fd5 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot up_counter_tb_behav xil_defaultlib.up_counter_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-851] illegal output port connection to sumout [D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/Day 2/post_synth_files/up_counter_post_synthesis.v:412]
+ERROR: [VRFC 10-851] illegal output port connection to cout [D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/Day 2/post_synth_files/up_counter_post_synthesis.v:451]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

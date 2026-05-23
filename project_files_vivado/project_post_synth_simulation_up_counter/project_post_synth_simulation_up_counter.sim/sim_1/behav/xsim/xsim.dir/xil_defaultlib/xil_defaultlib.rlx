@@ -1,0 +1,8 @@
+0.6
+2018.2
+Jun 14 2018
+20:41:02
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/Day 2/post_synth_files/primitives.v,1779545762,verilog,,D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/Day 2/post_synth_files/up_counter_post_synthesis.v,,DFF;LUT_K;adder;dual_port_ram;fpga_interconnect;multiply;mux;single_port_ram,,,,,,,,
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/Day 2/post_synth_files/up_counter_post_synthesis.v,1779546182,verilog,,D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/Day 2/post_synth_files/up_counter_tb.v,,up_counter,,,,,,,,
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/Day 2/post_synth_files/up_counter_tb.v,1779546289,verilog,,,,up_counter_tb,,,,,,,,
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/project_files_vivado/project_post_synth_simulation_up_counter/project_post_synth_simulation_up_counter.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
