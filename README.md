@@ -335,3 +335,12 @@ Once this is successful, it will genererate several files.
 <img width="1874" height="184" alt="image" src="https://github.com/user-attachments/assets/7b543525-9f26-49f7-b08b-fa4e7138961f" />
 <img width="961" height="463" alt="image" src="https://github.com/user-attachments/assets/a235974f-7dc2-48de-af36-6a38799e10ba" />
 <img width="612" height="504" alt="image" src="https://github.com/user-attachments/assets/c9a48515-0a51-484b-bf2b-a73d61410265" />
+
+## Running timing analysis.
+----
+Modifying the VPR Command to the following now 
+```
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --sdc_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/up_counter_day4/counter.sdc
+```
+<img width="1619" height="749" alt="image" src="https://github.com/user-attachments/assets/b65e236f-e2c1-4bab-85d4-89ff1d91b22b" />
+
