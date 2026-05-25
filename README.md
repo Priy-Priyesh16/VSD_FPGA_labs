@@ -266,4 +266,8 @@ After runnging the code in vivado's behavioural simulation this wave form was ge
 After runnign the elaboration step teh schematic can be obtained
 <img width="1625" height="925" alt="image" src="https://github.com/user-attachments/assets/53d5bcc2-491e-4e87-a020-8f4e6711c752" />
 
+We can also get the io planning done so that the pins can be assigned to the ports. The ouutput ports are not assigned as they will be viewd on an ILA. 
+<img width="1613" height="921" alt="image" src="https://github.com/user-attachments/assets/08101667-b77e-4f34-855a-8f1aa44d8aa1" />
+
+
 ----
