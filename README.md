@@ -344,3 +344,10 @@ vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPE
 ```
 <img width="1619" height="749" alt="image" src="https://github.com/user-attachments/assets/b65e236f-e2c1-4bab-85d4-89ff1d91b22b" />
 
+----
+## Generating post Ipl Netlist
+----
+Modify the command inside "generate_testbench.openfpga"
+```
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --sdc_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/up_counter_day4/counter.sdc --gen_post_synthesis_netlist on
+```
