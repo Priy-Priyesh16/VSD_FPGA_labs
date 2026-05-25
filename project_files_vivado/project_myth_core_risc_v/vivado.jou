@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon May 25 21:55:00 2026
+# Process ID: 8608
+# Current directory: D:/Xilinx_Projects/project_myth_core_risc_v
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9612 D:\Xilinx_Projects\project_myth_core_risc_v\project_myth_core_risc_v.xpr
+# Log file: D:/Xilinx_Projects/project_myth_core_risc_v/vivado.log
+# Journal file: D:/Xilinx_Projects/project_myth_core_risc_v\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Xilinx_Projects/project_myth_core_risc_v/project_myth_core_risc_v.xpr
+update_compile_order -fileset sources_1
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+report_utilization -name utilization_1
+report_power -name {power_1}

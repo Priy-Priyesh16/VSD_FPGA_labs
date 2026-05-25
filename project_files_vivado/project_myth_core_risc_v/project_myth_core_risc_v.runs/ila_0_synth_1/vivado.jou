@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon May 25 21:41:28 2026
+# Process ID: 704
+# Current directory: D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/project_files_vivado/project_myth_core_risc_v/project_myth_core_risc_v.runs/ila_0_synth_1
+# Command line: vivado.exe -log ila_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_0.tcl
+# Log file: D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/project_files_vivado/project_myth_core_risc_v/project_myth_core_risc_v.runs/ila_0_synth_1/ila_0.vds
+# Journal file: D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/project_files_vivado/project_myth_core_risc_v/project_myth_core_risc_v.runs/ila_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source ila_0.tcl -notrace

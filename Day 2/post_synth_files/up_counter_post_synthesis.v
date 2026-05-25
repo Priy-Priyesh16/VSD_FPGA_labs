@@ -407,9 +407,9 @@ module up_counter (
     ) \adder_up_counter^ADD~4-0[0]  (
         .a(\adder_up_counter^ADD~4-0[0]_input_0_0 ),
         .b(\adder_up_counter^ADD~4-0[0]_input_1_0 ),
-        .cin(1'bX),
+        .cin(1'b0),
         .cout(\adder_up_counter^ADD~4-0[0]_output_0_0 ),
-        .sumout(1'bx)
+        .sumout()
     );
 
     adder #(
@@ -448,7 +448,7 @@ module up_counter (
         .a(\adder_up_counter^ADD~4-4[0]_input_0_0 ),
         .b(\adder_up_counter^ADD~4-4[0]_input_1_0 ),
         .cin(\adder_up_counter^ADD~4-4[0]_input_2_0 ),
-        .cout(1'bx),
+        .cout(),
         .sumout(\adder_up_counter^ADD~4-4[0]_output_1_0 )
     );
 

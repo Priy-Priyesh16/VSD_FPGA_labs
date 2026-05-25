@@ -1,0 +1,10 @@
+0.6
+2018.2
+Jun 14 2018
+20:41:02
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/clk_gate.v,1628498659,verilog,,D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/myth_core_test.v,D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sp_verilog.vh,clk_gate,,,../../../../../../design/Day_3/include,,,,,
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sandpiper.vh,1628498659,verilog,,,,,,,,,,,,
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sp_verilog.vh,1628498659,verilog,,,D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sandpiper.vh,,,,,,,,,
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/myth_core_test.v,1779722545,verilog,,D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/testbench/Day3/test_rv_tb.v,,core,,,../../../../../../design/Day_3/include,,,,,
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/project_files_vivado/project_myth_core_risc_v/project_myth_core_risc_v.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
+D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/testbench/Day3/test_rv_tb.v,1779717139,verilog,,,,test_rv_tb,,,../../../../../../design/Day_3/include,,,,,

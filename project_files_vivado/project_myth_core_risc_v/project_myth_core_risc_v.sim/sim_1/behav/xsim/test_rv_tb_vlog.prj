@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../design/Day_3/include" \
+"../../../../../../design/Day_3/include/clk_gate.v" \
+"../../../../../../design/Day_3/myth_core_test.v" \
+"../../../../../../testbench/Day3/test_rv_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

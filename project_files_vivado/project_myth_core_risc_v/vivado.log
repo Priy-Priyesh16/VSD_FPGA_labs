@@ -1,0 +1,77 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon May 25 21:55:00 2026
+# Process ID: 8608
+# Current directory: D:/Xilinx_Projects/project_myth_core_risc_v
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9612 D:\Xilinx_Projects\project_myth_core_risc_v\project_myth_core_risc_v.xpr
+# Log file: D:/Xilinx_Projects/project_myth_core_risc_v/vivado.log
+# Journal file: D:/Xilinx_Projects/project_myth_core_risc_v\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Xilinx_Projects/project_myth_core_risc_v/project_myth_core_risc_v.xpr
+INFO: [Project 1-313] Project file moved from 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/project_files_vivado/project_myth_core_risc_v' since last save.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/include/sandpiper.vh'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sandpiper.vh' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/include/sp_verilog.vh'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sp_verilog.vh' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/include/clk_gate.v'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/clk_gate.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/myth_core_test.v'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/myth_core_test.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/testbench/Day3/test_rv_tb.v'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/testbench/Day3/test_rv_tb.v' instead.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/include/sandpiper.vh'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sandpiper.vh' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/include/sp_verilog.vh'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sp_verilog.vh' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/include/clk_gate.v'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/clk_gate.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/myth_core_test.v'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/myth_core_test.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/include/sandpiper.vh'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sandpiper.vh' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/include/sp_verilog.vh'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/sp_verilog.vh' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/include/clk_gate.v'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/include/clk_gate.v' instead.
+WARNING: [Project 1-312] File not found as 'D:/design/Day_3/myth_core_test.v'; using path 'D:/VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_3/myth_core_test.v' instead.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 819.777 ; gain = 99.938
+update_compile_order -fileset sources_1
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon May 25 21:55:52 2026] Launched impl_1...
+Run output will be captured here: D:/Xilinx_Projects/project_myth_core_risc_v/project_myth_core_risc_v.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 469 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.801 . Memory (MB): peak = 1721.500 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.801 . Memory (MB): peak = 1721.500 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 42 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 36 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 6 instances
+
+open_run: Time (s): cpu = 00:00:47 ; elapsed = 00:00:39 . Memory (MB): peak = 1805.727 ; gain = 946.527
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 1851.758 ; gain = 7.258
+report_utilization: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 1851.758 ; gain = 7.258
+report_power -name {power_1}
+Command: report_power -name power_1
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May 25 22:13:05 2026...
