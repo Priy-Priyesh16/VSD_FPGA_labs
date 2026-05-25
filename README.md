@@ -261,3 +261,9 @@ After runnging the code in vivado's behavioural simulation this wave form was ge
 <img width="1900" height="590" alt="image" src="https://github.com/user-attachments/assets/d0821770-9bbc-4ff8-8a83-9175ceade45b" />
 
 ----
+## **Schematic Design**
+----
+After runnign the elaboration step teh schematic can be obtained
+<img width="1625" height="925" alt="image" src="https://github.com/user-attachments/assets/53d5bcc2-491e-4e87-a020-8f4e6711c752" />
+
+----
