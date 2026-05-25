@@ -314,3 +314,15 @@ During the entire flow of synthesis to Bitstream the design is converted into re
 
 SOFA (Skywater Opensource FPGAs) are a series of open-source FPGA IPs using the open-source Skywater 130nm PDK and OpenFPGA framework.
 This repository utilizes the FPGA1212_QLSOFA_HD_PNR FPGA IP design, capable of operating at a maximum frequency of 50MHz. The design features 1152 LUTs, 2304 Flip-flops, and 1152 soft adders. It is implemented using the OpenFPGA framework, through which various performance and implementation reports are generated.
+
+----
+# Day 4 LAB
+----
+After mapping the repo of SOFA. 
+reaching till the directory of ``` /SOFA/FPGA1212_QLSOFA_HD_PNR/  ```
+run the following command
+```
+make runOpenFPGA
+```
+Once this is successful, it will genererate several files. 
+<img width="1908" height="256" alt="image" src="https://github.com/user-attachments/assets/66e80a89-8e00-4d3a-b2c4-fd8d30e56fa9" />
