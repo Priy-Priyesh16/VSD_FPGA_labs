@@ -334,3 +334,4 @@ Once this is successful, it will genererate several files.
 > To check the resource utilization one can use the vpr_stdout.log
 <img width="1874" height="184" alt="image" src="https://github.com/user-attachments/assets/7b543525-9f26-49f7-b08b-fa4e7138961f" />
 <img width="961" height="463" alt="image" src="https://github.com/user-attachments/assets/a235974f-7dc2-48de-af36-6a38799e10ba" />
+<img width="612" height="504" alt="image" src="https://github.com/user-attachments/assets/c9a48515-0a51-484b-bf2b-a73d61410265" />
