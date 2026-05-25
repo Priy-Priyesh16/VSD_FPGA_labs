@@ -236,6 +236,6 @@ Runing this will generate a .v and .sdf file
 <img width="731" height="87" alt="image" src="https://github.com/user-attachments/assets/27de1462-71ec-470f-abbe-a2c15014c7db" />
 Running Thsi post synth file for simulation along with the sdf (delay file generated in the process) and the test bench file. 
 <img width="1920" height="478" alt="image" src="https://github.com/user-attachments/assets/0acc93b2-c689-4b36-b144-7ed197b2991e" />
-All the related code can be found here[/design/Day_2] & [testbench/Day2]
+All the related code can be found here[/design/Day_2] & [[testbench/Day2](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/blob/main/testbench/counter_tb.v)]
 
 
