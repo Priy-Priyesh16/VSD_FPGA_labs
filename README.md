@@ -284,6 +284,10 @@ We can also get the io planning done so that the pins can be assigned to the por
 ----
 During the entire flow of synthesis to Bitstream the design is converted into required logic and placed on the CLB of the fpga that is made up fo LUT, FLip Flops and MUX, ench clb getting connected via several interconnects, connecting one CLB to other and when nedded conecting the IO pads to CLB. 
 
+----
+## **Running Implementation and generating Bitstream**
+----
+
 > POST implementation view
 <img width="1781" height="999" alt="image" src="https://github.com/user-attachments/assets/0ecaeffd-ffe3-4c67-b9c2-7b9f9de86be2" />
 
