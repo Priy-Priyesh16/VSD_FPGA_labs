@@ -370,3 +370,5 @@ vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPE
 -----
 # Day 5
 ----
+
+The RVMYTH design has been integrated with the custom SOFA FPGA fabric and processed through the complete OpenFPGA framework alongside the VTR flow. The execution of this flow produces a range of logs and reports, which are outlined in the following sections
