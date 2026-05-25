@@ -238,4 +238,20 @@ Running Thsi post synth file for simulation along with the sdf (delay file gener
 <img width="1920" height="478" alt="image" src="https://github.com/user-attachments/assets/0acc93b2-c689-4b36-b144-7ed197b2991e" />
 All the related code can be found here[/design/Day_2] & [[testbench/Day2](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/blob/main/testbench/counter_tb.v)]
 
-
+# Day 3
+----
+A 5 stage pipelined RISC-V core namely RVMYTH has been used to implement the addition of first 9 numbers in number system. The code was initallay developed in TL-Verilog to be used in another platforms. It has been converted to verilog code and has been used to implement a full RTL to bitstream in Vivado. 
+---
+RISC-V hasd multiple blocks namely 
+   - Instruction Memeory
+   - Data memory
+   - Register Files
+   - ALU
+----
+The execution on a RISC-V core happens in the following sequence:
+   1. Fetch: PC fetches the instruction from Instruction Memory.
+   2. Decode: Control Unit breaks down the instruction to determine operations (e.g., ALU, load/store) and reads required registers from the Register File.
+   3. Execute: The ALU performs math or calculates the address.
+   4. Memory: If it is a Load/Store instruction, the ALU result is passed to Data Memory to read/write data.
+   5. Write Back: The result is saved back into the Register File
+----
