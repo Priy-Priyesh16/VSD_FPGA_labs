@@ -255,6 +255,8 @@ The execution on a RISC-V core happens in the following sequence:
    4. Memory: If it is a Load/Store instruction, the ALU result is passed to Data Memory to read/write data.
    5. Write Back: The result is saved back into the Register File
 ----
+# Day 3 Lab
+----
 ## **Behavioural Simulation** 
 ----
 After runnging the code in vivado's behavioural simulation this wave form was generated. which shows that the output generated is 45 (sum of first 9 numbers)
