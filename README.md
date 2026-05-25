@@ -351,3 +351,5 @@ Modify the command inside "generate_testbench.openfpga"
 ```
 vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --sdc_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/up_counter_day4/counter.sdc --gen_post_synthesis_netlist on
 ```
+> We run the command and get the following files generated 
+<img width="1867" height="687" alt="image" src="https://github.com/user-attachments/assets/a4dd3579-4908-4ef0-93af-f463bb312a6b" />
