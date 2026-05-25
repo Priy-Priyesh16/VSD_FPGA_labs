@@ -286,10 +286,12 @@ During the entire flow of synthesis to Bitstream the design is converted into re
 
 > POST implementation view
 <img width="1781" height="999" alt="image" src="https://github.com/user-attachments/assets/0ecaeffd-ffe3-4c67-b9c2-7b9f9de86be2" />
+
 ----
 
 > Timing analysis after Implementation
 <img width="1327" height="356" alt="image" src="https://github.com/user-attachments/assets/ff5d20ab-d886-4814-a690-b067c986b91b" />
+
 ----
 
 > Resource utilization report
