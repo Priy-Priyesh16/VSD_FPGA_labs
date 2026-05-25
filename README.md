@@ -353,3 +353,10 @@ vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPE
 ```
 > We run the command and get the following files generated 
 <img width="1867" height="687" alt="image" src="https://github.com/user-attachments/assets/a4dd3579-4908-4ef0-93af-f463bb312a6b" />
+
+> Post Impplemenation Simulation 
+<img width="1908" height="489" alt="image" src="https://github.com/user-attachments/assets/51f242f2-559d-46c6-aa7c-52befb761cdb" />
+
+-----
+# Day 5
+----
