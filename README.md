@@ -354,6 +354,14 @@ vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPE
 > We run the command and get the following files generated 
 <img width="1867" height="687" alt="image" src="https://github.com/user-attachments/assets/a4dd3579-4908-4ef0-93af-f463bb312a6b" />
 
+> Power Analysis using SOFA
+<img width="1497" height="537" alt="image" src="https://github.com/user-attachments/assets/707b06f1-3faf-429b-89e3-0c32d78dc661" />
+Update the device layout and chan width as per requirment.
+>Update VPR commadn to include the .act and the technology map (45nm/ or as per your wish)
+```
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --power --activity_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/latest/vpr_arch/up_counter/MIN_ROUTE_CHAN_WIDTH/up_counter_ace_out.act --tech_properties /home/kunalg123/Desktop/vtr-verilog-to-routing/vtr_flow/tech/PTM_45nm/45nm.xml
+```
+
 > Post Impplemenation Simulation 
 <img width="1908" height="489" alt="image" src="https://github.com/user-attachments/assets/51f242f2-559d-46c6-aa7c-52befb761cdb" />
 
