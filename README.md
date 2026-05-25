@@ -326,3 +326,11 @@ make runOpenFPGA
 ```
 Once this is successful, it will genererate several files. 
 <img width="1908" height="256" alt="image" src="https://github.com/user-attachments/assets/66e80a89-8e00-4d3a-b2c4-fd8d30e56fa9" />
+
+> The openfpgashell.log is a file that has all kinds of information, like the commands it has run, differnet kinds of report like tming, area power , if you have provided .sdc you will get timing report. 
+<img width="1231" height="858" alt="image" src="https://github.com/user-attachments/assets/10dbb71e-40ed-4796-b8f0-2c6f14ca229c" />
+<img width="1410" height="468" alt="image" src="https://github.com/user-attachments/assets/4f58b487-f372-4b14-95b3-629a49e3ef92" />
+
+> To check the resource utilization one can use the vpr_stdout.log
+<img width="1874" height="184" alt="image" src="https://github.com/user-attachments/assets/7b543525-9f26-49f7-b08b-fa4e7138961f" />
+<img width="961" height="463" alt="image" src="https://github.com/user-attachments/assets/a235974f-7dc2-48de-af36-6a38799e10ba" />
