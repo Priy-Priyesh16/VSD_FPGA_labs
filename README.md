@@ -269,5 +269,14 @@ After runnign the elaboration step teh schematic can be obtained
 We can also get the io planning done so that the pins can be assigned to the ports. The ouutput ports are not assigned as they will be viewd on an ILA. 
 <img width="1613" height="921" alt="image" src="https://github.com/user-attachments/assets/08101667-b77e-4f34-855a-8f1aa44d8aa1" />
 
-
 ----
+## **Running Synthesis and Updating the Constraints**
+----
+> Constraints updated
+<img width="1072" height="552" alt="image" src="https://github.com/user-attachments/assets/1e2f9f8b-8839-4266-b9ec-df5923ab5dda" />
+
+> Timing Summary post synthesis
+<img width="1305" height="346" alt="image" src="https://github.com/user-attachments/assets/4f4b8046-f7a8-4019-af5d-9c7ab9566fbd" />
+
+> Utilization
+<img width="1099" height="626" alt="image" src="https://github.com/user-attachments/assets/82947624-08d7-4579-b025-1145f8e4d0e5" />
