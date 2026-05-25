@@ -234,5 +234,79 @@ $VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml up_counter --circuit_
 ```
 Runing this will generate a .v and .sdf file
 <img width="731" height="87" alt="image" src="https://github.com/user-attachments/assets/27de1462-71ec-470f-abbe-a2c15014c7db" />
+Running Thsi post synth file for simulation along with the sdf (delay file generated in the process) and the test bench file. 
+<img width="1920" height="478" alt="image" src="https://github.com/user-attachments/assets/0acc93b2-c689-4b36-b144-7ed197b2991e" />
+All the related code can be found here[/design/Day_2] & [[testbench/Day2](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/blob/main/testbench/counter_tb.v)]
 
+# Day 3
+----
+A 5 stage pipelined RISC-V core namely RVMYTH has been used to implement the addition of first 9 numbers in number system. The code was initallay developed in TL-Verilog to be used in another platforms. It has been converted to verilog code and has been used to implement a full RTL to bitstream in Vivado. 
+---
+RISC-V hasd multiple blocks namely 
+   - Instruction Memeory
+   - Data memory
+   - Register Files
+   - ALU
+----
+The execution on a RISC-V core happens in the following sequence:
+   1. Fetch: PC fetches the instruction from Instruction Memory.
+   2. Decode: Control Unit breaks down the instruction to determine operations (e.g., ALU, load/store) and reads required registers from the Register File.
+   3. Execute: The ALU performs math or calculates the address.
+   4. Memory: If it is a Load/Store instruction, the ALU result is passed to Data Memory to read/write data.
+   5. Write Back: The result is saved back into the Register File
+----
+## **Behavioural Simulation** 
+----
+After runnging the code in vivado's behavioural simulation this wave form was generated. which shows that the output generated is 45 (sum of first 9 numbers)
+<img width="1900" height="590" alt="image" src="https://github.com/user-attachments/assets/d0821770-9bbc-4ff8-8a83-9175ceade45b" />
+
+----
+## **Schematic Design**
+----
+After runnign the elaboration step teh schematic can be obtained
+<img width="1625" height="925" alt="image" src="https://github.com/user-attachments/assets/53d5bcc2-491e-4e87-a020-8f4e6711c752" />
+
+We can also get the io planning done so that the pins can be assigned to the ports. The ouutput ports are not assigned as they will be viewd on an ILA. 
+<img width="1613" height="921" alt="image" src="https://github.com/user-attachments/assets/08101667-b77e-4f34-855a-8f1aa44d8aa1" />
+
+----
+## **Running Synthesis and Updating the Constraints**
+----
+> Constraints updated
+<img width="1072" height="552" alt="image" src="https://github.com/user-attachments/assets/1e2f9f8b-8839-4266-b9ec-df5923ab5dda" />
+
+> Timing Summary post synthesis
+<img width="1305" height="346" alt="image" src="https://github.com/user-attachments/assets/4f4b8046-f7a8-4019-af5d-9c7ab9566fbd" />
+
+> Utilization
+<img width="1099" height="626" alt="image" src="https://github.com/user-attachments/assets/82947624-08d7-4579-b025-1145f8e4d0e5" />
+
+----
+During the entire flow of synthesis to Bitstream the design is converted into required logic and placed on the CLB of the fpga that is made up fo LUT, FLip Flops and MUX, ench clb getting connected via several interconnects, connecting one CLB to other and when nedded conecting the IO pads to CLB. 
+
+----
+## **Running Implementation and generating Bitstream**
+----
+
+> POST implementation view
+<img width="1781" height="999" alt="image" src="https://github.com/user-attachments/assets/0ecaeffd-ffe3-4c67-b9c2-7b9f9de86be2" />
+
+----
+
+> Timing analysis after Implementation
+<img width="1327" height="356" alt="image" src="https://github.com/user-attachments/assets/ff5d20ab-d886-4814-a690-b067c986b91b" />
+
+----
+
+> Resource utilization report
+<img width="1521" height="647" alt="image" src="https://github.com/user-attachments/assets/d71cead4-6a7a-46f0-a9c8-89abc4e96e5d" />
+
+----
+
+> Power analysis after Implementation
+<img width="1082" height="562" alt="image" src="https://github.com/user-attachments/assets/3783e271-b9e0-479e-96c4-c8b054857a5a" />
+
+----
+# Day 4
+----
 
