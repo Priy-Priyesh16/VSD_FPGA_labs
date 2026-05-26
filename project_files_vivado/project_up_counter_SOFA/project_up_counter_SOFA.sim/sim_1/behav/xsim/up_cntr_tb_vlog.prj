@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_2/primitives.v" \
+"../../../../../../VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/design/Day_4/up_counter_post_synthesis.v" \
+"../../../../../../VSD_FPGA_WORKSHOP/git_repo/VSD_FPGA_labs/testbench/Day4/up_cntr_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
