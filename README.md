@@ -372,3 +372,43 @@ vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPE
 ----
 
 The RVMYTH design has been integrated with the custom SOFA FPGA fabric and processed through the complete OpenFPGA framework alongside the VTR flow. The execution of this flow produces a range of logs and reports, which are outlined in the following sections
+
+-----
+Faced teh follwoingerror while implemeting  the logic as the code provide was a derived verilog code and had to be converted to the synthesisabel code. not sure if this is a codinf issue or a environment issue
+-----
+
+```
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA$ make runOpenFPGA
+make: *** No rule to make target 'runOpenFPGA'.  Stop.
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA$ cd FPGA1212_QLSOFA_HD_PNR/
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ make runOpenFPGA
+OPENFPGA_PATH=/home/kunalg123/Desktop/OpenFPGA
+shopt
+ INFO (     MainThread) - Set up to run 2 Parallel threads
+ INFO (     MainThread) - Currently running task FPGA1212_QLSOFA_HD_task
+ INFO (     MainThread) - Removing run_dir run001
+ INFO (     MainThread) - Removing run_dir latest
+ INFO (     MainThread) - Task execution completed
+ INFO (     MainThread) - Set up to run 2 Parallel threads
+ INFO (     MainThread) - Currently running task FPGA1212_QLSOFA_HD_task
+ INFO (     MainThread) - Created "run001" directory for current task run
+ INFO (     MainThread) - Running "yosys_vpr" flow
+ INFO (     MainThread) - Found 1 Architectures 1 Benchmarks & 1 Script Parameters
+ INFO (     MainThread) - Created total 1 jobs
+
+ERROR (00_core_MIN_ROUTE_CHAN_WIDTH) - Failed to execute openfpga flow - 00_core_MIN_ROUTE_CHAN_WIDTH
+Traceback (most recent call last):
+  File "/home/kunalg123/Desktop/OpenFPGA/openfpga_flow/scripts/run_fpga_task.py", line 513, in run_single_script
+    raise subprocess.CalledProcessError(0, " ".join(command))
+subprocess.CalledProcessError: Command 'python3 /home/kunalg123/Desktop/OpenFPGA/openfpga_flow/scripts/run_fpga_flow.py /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/arch/vpr_arch.xml /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/rvmyth/myth_core_test.v --top_module core --run_dir /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH --fpga_flow yosys_vpr --openfpga_shell_template /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/generate_testbench.openfpga --openfpga_arch_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/arch/openfpga_arch.xml --openfpga_sim_setting_file /home/kunalg123/Desktop/OpenFPGA/openfpga_flow/openfpga_simulation_settings/auto_sim_openfpga.xml --external_fabric_key_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/arch/fabric_key.xml --openfpga_vpr_device_layout auto --openfpga_vpr_route_chan_width 180 --power --power_tech /home/kunalg123/Desktop/OpenFPGA/openfpga_flow/tech/PTM_45nm/45nm.xml --arch_variable_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/design_variables.yml --vpr_fpga_verilog --vpr_fpga_verilog_dir /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH --vpr_fpga_x2p_rename_illegal_port --TOP core' returned non-zero exit status 0.
+X X X X X X Failed to generate netlist X X X X X X
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ 
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ 
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ 
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ grep "Number of cells" ~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH/yosys_output.log
+   Number of cells:               5413
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ grep "Error [0-9]" ~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH/openfpgashell.log
+Error 1: Invalid key alias 'grid_io_top_top_12__13_'!
+Error 2: Command 'build_fabric' execution has fatal errors
+
+```
