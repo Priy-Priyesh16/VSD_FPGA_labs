@@ -1,453 +1,571 @@
-# VSD_FPGA_labs
-Learnings and Lab Excersices 
-----------------------------------------------
+# VSD FPGA Labs
+> Learnings and Lab Exercises
+
+---
+
+## 📑 Table of Contents
+
+- [Day 1 — Basics of FPGA](#day-1)
+  - [ASIC vs FPGA](#asic-vs-fpga)
+  - [Applications of FPGA](#applications-of-fpga)
+  - [FPGA Architecture](#fpga-architecture)
+  - [LUT Structure](#lut-structure)
+  - [FPGA Design Flow](#fpga-design-flow)
+  - [What Cannot Be Synthesised](#what-cannot-be-synthesised)
+  - [Programming Methods](#different-ways-of-programming-a-fpga-board)
+  - [Day 1 Lab — UP Counter in Vivado](#day-1-lab)
+- [Day 2 — OpenFPGA & VTR Flow](#day-2)
+  - [OpenFPGA Introduction](#open-fpga-introduction)
+  - [VTR Flow](#vtr-flow)
+  - [Day 2 Lab — Running VTR](#day-2-lab)
+- [Day 3 — RISC-V Core on FPGA](#day-3)
+  - [Day 3 Lab — RVMYTH in Vivado](#day-3-lab)
+- [Day 4 — SOFA Open-Source FPGA](#day-4)
+  - [Day 4 Lab — Running SOFA Flow](#day-4-lab)
+- [Day 5 — RVMYTH on SOFA Fabric](#day-5)
+  - [Day 5 Lab — Integration & Results](#day-5-lab)
+- [References](#references)
+- [Acknowledgements](#acknowledgements)
+
+---
+
 # Day 1
-### **Basics of FPGA**
- History of Programmable logic devices
- 1. Programmable logic array 
- 2. CPLD - Complex Programmable Logic Device
- 3. FPGA - Feild Programmable Gate Array
- These are all reprogrammable logic devices as per our design. Helpful in prototyping.
- ### **ASIC vs FPGA**
-|                       _ASIC_                      |                  _FPGA_             |
-| -------------------------------------------------- | ----------------------------------|    
-One time Programmable                                |           Reprogrammable
-Expensive when to be used in less quantity           |           Expensive when to be used in large quantity
-Used for specific purposes                           |      Can be used for different applications as it is reprogramable
-RTL to Layout                                        |      RTL to Bitstream
-layout to be sent to the foundary                    |    bitstream can be directly programmed to a FPGA
-### **Aplications of FPGA**
+
+## Basics of FPGA
+
+**History of Programmable Logic Devices**
+
+1. Programmable Logic Array
+2. CPLD — Complex Programmable Logic Device
+3. FPGA — Field Programmable Gate Array
+
+> These are all reprogrammable logic devices. They are especially helpful in prototyping.
+
+---
+
+## ASIC vs FPGA
+
+| ASIC | FPGA |
+|------|------|
+| One-time programmable | Reprogrammable |
+| Expensive when used in small quantity | Expensive when used in large quantity |
+| Used for specific purposes | Can be used for different applications |
+| RTL to Layout | RTL to Bitstream |
+| Layout sent to the foundry | Bitstream can be directly programmed to an FPGA |
+
+---
+
+## Applications of FPGA
+
 1. Hardware Acceleration
 2. Space Technology
 3. Defence & Research
 4. High Speed Computing
-5. ML & AI applications
-### **FPGA Architecture**
-<img width="1077" height="620" alt="image" src="https://github.com/user-attachments/assets/fc6461a4-8252-48f1-8df6-b9fcb6df94bf" />
->Programmable  IO : These are the link beteen the peripherials and the fpga. They basically act as a bridge between the outer world and FPGA.
->CLB (Configurable Logic Block) : These consistsof LUT, FlipFlopsand Multiplexer. 
->Interconnects: These are connecting wires between the differnet CLBS and IO pads.
-<img width="993" height="687" alt="image" src="https://github.com/user-attachments/assets/be715e02-6d4b-4c11-b97a-490de55b054a" />
->The FPGA may Have internal memory inteh form of RAM blocks and clock tiles as well.
+5. ML & AI Applications
 
-### **LUT Structure**
-It basically consists of muxes in side them, based on the input provided the data path is decided.  
-If there is a 2:1 mux, the output of the truth table will act as an input to the LUT ( this is handled by the Tool)  
-<img width="983" height="869" alt="image" src="https://github.com/user-attachments/assets/7232fc5a-7c60-45a3-9e8d-11465293e2a5" />  
+---
 
-### **FPGA Design Flow**
-<img width="1051" height="909" alt="image" src="https://github.com/user-attachments/assets/52c1ec6c-ad77-493c-9785-0f0ea3adaec8" />
-First the Architeure is to be finalized and decided. The the RTL code is written, the written code is supposed to be synthesisable, once the simulation is completed  
-Synthesis is then done in which a timing analysis is performed, also the pin asignment is done in tis stage using the constraints file.  
-Implmentation is then performed after a succesful synhtesis, in this stage also a timing analysis is performed, slack hold and setup should be possitve for the deisgn to behave correctly.  
-### **What cannot be synthesised**
-1. Delay interms of # ( only to be used in simulation).
-2. initial statement
-3. infinite loops
+## FPGA Architecture
+
+<img width="1077" height="620" alt="FPGA Architecture" src="https://github.com/user-attachments/assets/fc6461a4-8252-48f1-8df6-b9fcb6df94bf" />
+
+| Block | Description |
+|-------|-------------|
+| **Programmable IO** | Acts as a bridge between peripherals and the FPGA — the link between the outer world and the chip. |
+| **CLB (Configurable Logic Block)** | Consists of LUTs, Flip-Flops, and Multiplexers. |
+| **Interconnects** | Connecting wires between different CLBs and IO pads. |
+
+<img width="993" height="687" alt="CLB Detail" src="https://github.com/user-attachments/assets/be715e02-6d4b-4c11-b97a-490de55b054a" />
+
+> The FPGA may also have internal memory in the form of RAM blocks and clock tiles.
+
+---
+
+## LUT Structure
+
+A LUT basically consists of muxes inside it. Based on the input provided, the data path is decided.
+
+If there is a 2:1 mux, the output of the truth table will act as an input to the LUT (this is handled by the tool).
+
+<img width="983" height="869" alt="LUT Structure" src="https://github.com/user-attachments/assets/7232fc5a-7c60-45a3-9e8d-11465293e2a5" />
+
+---
+
+## FPGA Design Flow
+
+<img width="1051" height="909" alt="FPGA Design Flow" src="https://github.com/user-attachments/assets/52c1ec6c-ad77-493c-9785-0f0ea3adaec8" />
+
+1. **Architecture Finalization** — Decide the target architecture.
+2. **RTL Coding** — Write synthesisable RTL code.
+3. **Simulation** — Verify the design behaviour.
+4. **Synthesis** — Perform timing analysis and pin assignment using a constraints file.
+5. **Implementation** — Run placement & routing; setup and hold slack must be positive.
+
+---
+
+## What Cannot Be Synthesised
+
+1. Delays in terms of `#` (only to be used in simulation)
+2. `initial` statement
+3. Infinite loops
 4. Dynamic Memory Allocation
 
-### **Different ways of programming a FPGA board**
+---
+
+## Different Ways of Programming a FPGA Board
+
 1. Using JTAG
 2. Using VIO
 
-### **VIO- Virtual input output**
-Theses are basically a virtual way of montioring the signals in real time on an ILA (integrated logic analyzer). 
-## **Day_1_Lab**
+**VIO — Virtual Input Output**
 
-> ## **UP_Counter in vivado**
-> **SIMULATION**
-> <img width="1910" height="653" alt="image" src="https://github.com/user-attachments/assets/db63b610-3201-4482-97cc-3ecf667281be" />
+VIO provides a virtual way of monitoring signals in real time on an ILA (Integrated Logic Analyzer).
 
-> **PIN_Mapping**
-> <img width="1566" height="469" alt="image" src="https://github.com/user-attachments/assets/40a91643-ab59-4f2e-aefb-5e0d8fd10f65" />
+---
 
-> **Schematic_in_elaborated_design**
-> <img width="1903" height="909" alt="image" src="https://github.com/user-attachments/assets/d7900ebc-3cc9-40aa-8c4d-c6b5ec45b985" />
+## Day 1 Lab
 
-> **Timing Summary**
-> <img width="1568" height="654" alt="image" src="https://github.com/user-attachments/assets/275e2126-1fdf-42e0-aff0-85cf5ff92f2d" />
+### UP Counter in Vivado
 
-> **Utilization Report**
-> <img width="1920" height="821" alt="image" src="https://github.com/user-attachments/assets/524af62c-03db-451d-865a-9dc49510c8f5" />
+| Step | Screenshot |
+|------|------------|
+| **Simulation** | <img width="1910" height="653" alt="Simulation" src="https://github.com/user-attachments/assets/db63b610-3201-4482-97cc-3ecf667281be" /> |
+| **PIN Mapping** | <img width="1566" height="469" alt="PIN Mapping" src="https://github.com/user-attachments/assets/40a91643-ab59-4f2e-aefb-5e0d8fd10f65" /> |
+| **Schematic (Elaborated Design)** | <img width="1903" height="909" alt="Schematic" src="https://github.com/user-attachments/assets/d7900ebc-3cc9-40aa-8c4d-c6b5ec45b985" /> |
+| **Timing Summary** | <img width="1568" height="654" alt="Timing Summary" src="https://github.com/user-attachments/assets/275e2126-1fdf-42e0-aff0-85cf5ff92f2d" /> |
+| **Utilization Report** | <img width="1920" height="821" alt="Utilization Report" src="https://github.com/user-attachments/assets/524af62c-03db-451d-865a-9dc49510c8f5" /> |
+| **Implemented Design** | <img width="1920" height="793" alt="Implemented Design" src="https://github.com/user-attachments/assets/b19ab75a-7d60-4b11-bae1-4f54c0b322ca" /> |
+| **Bitstream Generated Successfully** | <img width="1920" height="834" alt="Bitstream" src="https://github.com/user-attachments/assets/63c340ff-3a07-460d-9d08-b6cb89231f19" /> |
 
-> **Implemented_design**
-> <img width="1920" height="793" alt="image" src="https://github.com/user-attachments/assets/b19ab75a-7d60-4b11-bae1-4f54c0b322ca" />
+> 📁 Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
 
-> **Bitstream_generated_succssfully**
-><img width="1920" height="834" alt="image" src="https://github.com/user-attachments/assets/63c340ff-3a07-460d-9d08-b6cb89231f19" />
-
-> Code and testbench can be found [here](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/tree/main/UP_Counter/UP_Counter.srcs)
----------------------------------------------------
+---
 
 # Day 2
-### Open FPGA Introduction
-OpenFPGA is the first open‑source FPGA IP generator, enabling highly customizable FPGA architectures. With built‑in Verilog‑to‑bitstream flows and self‑testing verification, it empowers agile prototyping and democratizes FPGA design for researchers and chip developers.
-Open Source framework whcih can be used to quickly genreate a fabric fro a custom FPGA ready to be used in feilds where there is a need of custom fpga with quick results. 
-How is this better that traditional FPGAs?
-Automation technique is used heavily throughout the process, 
-This reduces the Development cycle of a new FPGA
-Also has accessto open source design tools. 
-It is helpful in accelarating the domain specific needs since prototyping and customizing a FPGA is expensive and time consuming. 
 
-### Flow of Process.
-<img width="923" height="699" alt="image" src="https://github.com/user-attachments/assets/494bd7de-59f7-4ea3-8e2f-8ce07d9d23aa" />
-Link to the above image is [here](https://openfpga.readthedocs.io/en/master/_images/openfpga_framework.svg)
+## Open FPGA Introduction
 
----
-Open FPGA supports the following
+OpenFPGA is the first open-source FPGA IP generator, enabling highly customizable FPGA architectures. With built-in Verilog-to-bitstream flows and self-testing verification, it empowers agile prototyping and democratizes FPGA design for researchers and chip developers.
+
+**Why is this better than traditional FPGAs?**
+
+- Heavy use of automation throughout the process
+- Reduces the development cycle of a new FPGA
+- Access to open-source design tools
+- Helpful in accelerating domain-specific needs, since prototyping and customizing an FPGA is otherwise expensive and time-consuming
+
+### OpenFPGA Framework
+
+<img width="923" height="699" alt="OpenFPGA Framework" src="https://github.com/user-attachments/assets/494bd7de-59f7-4ea3-8e2f-8ce07d9d23aa" />
+
+> Full framework image: [openfpga.readthedocs.io](https://openfpga.readthedocs.io/en/master/_images/openfpga_framework.svg)
+
+**OpenFPGA supports:**
+
 1. Verilog
 2. SDC
-3. Bitstream generation
+3. Bitstream Generation
 4. FPGA-Spice
----
-Key Stages duing the Process:
-1. VTR
-   - a. Verilog to Routing
-   - Tools used:
-   - I. Odin II (Elaboration & Synthesis)
-   - II. ABC (Logic Optimization & technology Mapping to LUTs)
-2. VPR
-   - a. Pack the Netlist
-   - b. Placement
-   - c. Routing
-   - d. Timing Analysis
-3. After VTR & VPR : Output Statistics is also published like
-   - a. Min no of tracks needed
-   - b. route
-   - c. total wire length
-   - d. circuit speed
-   - e. area
-   - f. power
-4. Post Synthesis netlist.
 
-### VTR FLOW
-<img width="905" height="681" alt="image" src="https://github.com/user-attachments/assets/47d96733-614c-4264-b57d-9f9e9dc2b31d" />
-
-### Steps to run the tool 
-   -Build Open FPGA [steps here](https://openfpga.readthedocs.io/en/master/tutorials/getting_started/compile/)
-   -Build VTR [steps here](https://docs.verilogtorouting.org/en/latest/quickstart/#)
-   -Run VPR on pre synthesised Circuit
-
-   another path could be
-   first two steps common (build open fpga and VTR (should be one time process))
-   - run on a custom deisgn
-   - also the entoire process can be automated using the scripts to automate the runs of odin II and ABC.
----
-## Command to run VPR on a Pre_Synthesised circuit
-COmmand: > $VTR_ROOT/vpr/vpr \
-    $VTR_ROOT/vtr_flow/arch/timing/EArch.xml \
-    $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif \
-    --route_chan_width 100
----
-## VTR FLOW
----
-VTR basically has three stages 
-   1. Elaboration & Synthesis (ODIN II)
-   2. Logic Optimization & Technology Mapping (ABC)
-   3. Packing, Placement, Routing & Timing Analysis (VPR)
----
-# Day 2 LAB
----
-## Running VTR on pre synthesised circuit
----
-Setting up the working directory
-<img width="937" height="289" alt="image" src="https://github.com/user-attachments/assets/40cb9439-2e22-4e7d-b708-f933a3b7290f" />
-
-   - RUnning the command 
-   - $VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif  --route_chan_width 100 --disp on
-   
-   <img width="1908" height="913" alt="image" src="https://github.com/user-attachments/assets/910b34f1-ed0b-4a6d-b16d-51b4ba8d7ca8" />
-   <img width="1346" height="873" alt="routing_pre_synth_circuit" src="https://github.com/user-attachments/assets/2a734421-7fa9-4c25-81fe-7f5c7f9fa735" />
-
-**Once the Command above is ran. We get a full report**
 ---
 
-<img width="1069" height="705" alt="image" src="https://github.com/user-attachments/assets/b7d23a7b-0ad0-47dd-9426-a467e254d291" />
+## VTR Flow
 
-**All the reports are generated and sved in the working directory**
+### Key Stages
 
-<img width="998" height="200" alt="image" src="https://github.com/user-attachments/assets/da5d95c0-1c18-42ef-b629-6aa8a224d995" />
+| Stage | Tool | Function |
+|-------|------|----------|
+| **Elaboration & Synthesis** | Odin II | RTL elaboration and synthesis |
+| **Logic Optimization & Tech Mapping** | ABC | Maps logic to LUTs |
+| **Pack → Place → Route → Timing** | VPR | Full implementation and analysis |
 
-----
-|critical_path_highilighted| critical_path_with_delays_highlighted|
-|---|---|
-| <img width="834" height="647" alt="image" src="https://github.com/user-attachments/assets/61255ef0-6d82-47d7-b9dd-e60c020b4d21" /> | <img width="541" height="369" alt="image" src="https://github.com/user-attachments/assets/673cddc2-c629-40d5-9e98-048941add737" /> |
-| Routing Critical Paths | Routing critical path delays highlighted    |
-| <img width="738" height="391" alt="image" src="https://github.com/user-attachments/assets/c5abd178-2866-4c38-b980-ef999f5c9fa6" /> | <img width="734" height="375" alt="image" src="https://github.com/user-attachments/assets/a8962855-aa09-470f-a663-fa2bea87c07e" /> |
-| Block pin Utilization| Congestion with nets|
-| <img width="814" height="688" alt="image" src="https://github.com/user-attachments/assets/df2c01a8-ece8-43e8-a905-c7425c6528f7" /> | <img width="968" height="939" alt="image" src="https://github.com/user-attachments/assets/2f02d994-e5a0-46aa-98c0-cb8ccd1800d3" /> |
-|Total Routing Cost | post routing cost |
-|<img width="973" height="936" alt="image" src="https://github.com/user-attachments/assets/93e619b1-4c46-4543-9ea5-4915de7b04ec" /> |<img width="1647" height="889" alt="image" src="https://github.com/user-attachments/assets/0eff587e-4362-4523-9d87-24c916670a90" /> |
-----
+**Output Statistics published after VTR & VPR:**
 
-Looking at the timing report we found that there was not constraint put up so we were getting a negative slack, as the time to arrive was not specified. 
-<img width="1229" height="766" alt="image" src="https://github.com/user-attachments/assets/6dfc2222-1386-4663-b714-74fb831d74f3" />
+- Min number of tracks needed
+- Route
+- Total wire length
+- Circuit speed
+- Area
+- Power
 
-So to fix this we added a timing constraint file 
+**Post-synthesis netlist** is also generated.
+
+<img width="905" height="681" alt="VTR Flow" src="https://github.com/user-attachments/assets/47d96733-614c-4264-b57d-9f9e9dc2b31d" />
+
+### Steps to Run the Tool
+
+1. [Build OpenFPGA](https://openfpga.readthedocs.io/en/master/tutorials/getting_started/compile/)
+2. [Build VTR](https://docs.verilogtorouting.org/en/latest/quickstart/#)
+3. Run VPR on pre-synthesised circuit
+
+---
+
+## Day 2 Lab
+
+### Running VTR on a Pre-Synthesised Circuit
+
+**Setting up the working directory:**
+
+<img width="937" height="289" alt="Working Directory" src="https://github.com/user-attachments/assets/40cb9439-2e22-4e7d-b708-f933a3b7290f" />
+
+**Run command:**
+
+```bash
+$VTR_ROOT/vpr/vpr \
+  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml \
+  $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif \
+  --route_chan_width 100 \
+  --disp on
+```
+
+<img width="1908" height="913" alt="VPR Run" src="https://github.com/user-attachments/assets/910b34f1-ed0b-4a6d-b16d-51b4ba8d7ca8" />
+<img width="1346" height="873" alt="Routing Pre-Synth Circuit" src="https://github.com/user-attachments/assets/2a734421-7fa9-4c25-81fe-7f5c7f9fa735" />
+
+**Full report generated:**
+
+<img width="1069" height="705" alt="Full Report" src="https://github.com/user-attachments/assets/b7d23a7b-0ad0-47dd-9426-a467e254d291" />
+
+**All reports saved to the working directory:**
+
+<img width="998" height="200" alt="Saved Reports" src="https://github.com/user-attachments/assets/da5d95c0-1c18-42ef-b629-6aa8a224d995" />
+
+---
+
+### VPR Visualisation Results
+
+| View | Description |
+|------|-------------|
+| <img width="834" height="647" alt="Critical Path Highlighted" src="https://github.com/user-attachments/assets/61255ef0-6d82-47d7-b9dd-e60c020b4d21" /> | **Critical Path Highlighted** |
+| <img width="541" height="369" alt="Critical Path with Delays" src="https://github.com/user-attachments/assets/673cddc2-c629-40d5-9e98-048941add737" /> | **Critical Path with Delays Highlighted** |
+| <img width="738" height="391" alt="Routing Critical Paths" src="https://github.com/user-attachments/assets/c5abd178-2866-4c38-b980-ef999f5c9fa6" /> | **Routing Critical Paths** |
+| <img width="734" height="375" alt="Routing Critical Path Delays" src="https://github.com/user-attachments/assets/a8962855-aa09-470f-a663-fa2bea87c07e" /> | **Routing Critical Path Delays Highlighted** |
+| <img width="814" height="688" alt="Block Pin Utilization" src="https://github.com/user-attachments/assets/df2c01a8-ece8-43e8-a905-c7425c6528f7" /> | **Block Pin Utilization** |
+| <img width="968" height="939" alt="Congestion with Nets" src="https://github.com/user-attachments/assets/2f02d994-e5a0-46aa-98c0-cb8ccd1800d3" /> | **Congestion with Nets** |
+| <img width="973" height="936" alt="Total Routing Cost" src="https://github.com/user-attachments/assets/93e619b1-4c46-4543-9ea5-4915de7b04ec" /> | **Total Routing Cost** |
+| <img width="1647" height="889" alt="Post Routing Cost" src="https://github.com/user-attachments/assets/0eff587e-4362-4523-9d87-24c916670a90" /> | **Post-Routing Cost** |
+
+---
+
+### Adding Timing Constraints
+
+Looking at the timing report, negative slack was observed because no constraint was set (arrival time not specified).
+
+<img width="1229" height="766" alt="Timing Without Constraints" src="https://github.com/user-attachments/assets/6dfc2222-1386-4663-b714-74fb831d74f3" />
+
+**Fix — Add a timing constraint file:**
+
 ```
 create_clock -period 10 -name pclk
 set_input_delay -clock pclk -max 0 [get_ports {*}]
 set_output_delay -clock pclk -max 0 [get_ports {*}]
 ```
-Now pass this command again in the working directory 
 
-```
+**Re-run with the SDC file:**
+
+```bash
 $VTR_ROOT/vpr/vpr \
-$VTR_ROOT/vtr_flow/arch/timing/EArch.xml \
-$VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif \
---route_chan_width 100 \
---sdc_file <complete file path here with out bracket without quotes> 
-
+  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml \
+  $VTR_ROOT/vtr_flow/benchmarks/blif/tseng.blif \
+  --route_chan_width 100 \
+  --sdc_file <complete_file_path>
 ```
 
-Doing this is now giving is slack based on the calulation done as per constraint file.
+Slack is now calculated correctly based on the constraint file:
 
-<img width="1218" height="654" alt="image" src="https://github.com/user-attachments/assets/9296f26e-a5a6-4e9f-b680-f22f50e66c48" />
+<img width="1218" height="654" alt="Timing With Constraints" src="https://github.com/user-attachments/assets/9296f26e-a5a6-4e9f-b680-f22f50e66c48" />
+
 ---
 
-## Running the entire flow manually yet using the python_flow.py script. 
+### Running the Entire Flow via `python_flow.py`
+
+```bash
+$VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py \
+  <location_of_design_file> \
+  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml \
+  -temp_dir . \
+  --route_chan_width 100
+```
+
+<img width="743" height="249" alt="BLIF Files Generated" src="https://github.com/user-attachments/assets/e9fc1aac-0dc9-4ffe-9e96-a02d25907042" />
+
+**Pass the generated `.blif` for placement & routing:**
+
+```bash
+$VTR_ROOT/vpr/vpr \
+  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml up_counter \
+  --circuit_file up_counter.pre-vpr.blif \
+  --route_chan_width 100 \
+  --analysis \
+  --disp on
+```
+
+| View | Description |
+|------|-------------|
+| <img width="1600" height="560" alt="Block Internals" src="https://github.com/user-attachments/assets/6c8914c2-2e61-424c-baca-4c944e947df6" /> | **Block Internals** |
+| <img width="1616" height="815" alt="Block Pin Utilization" src="https://github.com/user-attachments/assets/d94bab33-c71f-4a7a-97d0-17100cd03ad7" /> | **Block Pin Utilization** |
+| <img width="906" height="832" alt="Routing" src="https://github.com/user-attachments/assets/cfb789c2-23c1-41a4-9b4b-37a48f7b545e" /> | **Routing** |
+| <img width="862" height="812" alt="Congestion with Nets" src="https://github.com/user-attachments/assets/a4b1114c-62aa-41bb-af5b-828bbd520af3" /> | **Congestion with Nets** |
+
 ---
-Run this command
 
-```
-$VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py <location of your design file> <location of rchfile>$VTR_ROOT/vtr_flow/arch/timing/EArch.xml <a temp dir to store nay file generated during run time for temporary purpiose>-temp_dir . --route_chan_width 100
-```
-<img width="743" height="249" alt="image" src="https://github.com/user-attachments/assets/e9fc1aac-0dc9-4ffe-9e96-a02d25907042" />
+### Generating Post-Implementation Netlist
 
-It can be seen in the above image thatcertain .blif file are generated. 
-
-Now to perform rest of the steps. We will pass the generated .blif file and the architecture on which we wish to syht / PnR our design.
-```
-$VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml up_counter --circuit_file up_counter.pre-vpr.blif --route_chan_width 100 --analysis --disp on
+```bash
+$VTR_ROOT/vpr/vpr \
+  $VTR_ROOT/vtr_flow/arch/timing/EArch.xml up_counter \
+  --circuit_file up_counter.pre-vpr.blif \
+  --gen_post_synthesis_netlist on
 ```
 
-|Block_inernals|Block Pin utilization|
-|---|---|
-| <img width="1600" height="560" alt="image" src="https://github.com/user-attachments/assets/6c8914c2-2e61-424c-baca-4c944e947df6" /> | <img width="1616" height="815" alt="image" src="https://github.com/user-attachments/assets/d94bab33-c71f-4a7a-97d0-17100cd03ad7" /> |
-|Routing |Congestion with nets|
-|<img width="906" height="832" alt="image" src="https://github.com/user-attachments/assets/cfb789c2-23c1-41a4-9b4b-37a48f7b545e" /> | <img width="862" height="812" alt="image" src="https://github.com/user-attachments/assets/a4b1114c-62aa-41bb-af5b-828bbd520af3" /> |
+This generates a `.v` and `.sdf` file:
 
-----
-Generating post implemetation netlist
-```
-$VTR_ROOT/vpr/vpr $VTR_ROOT/vtr_flow/arch/timing/EArch.xml up_counter --circuit_file up_counter.pre-vpr.blif --gen_post_synthesis_netlist on
-```
-Runing this will generate a .v and .sdf file
-<img width="731" height="87" alt="image" src="https://github.com/user-attachments/assets/27de1462-71ec-470f-abbe-a2c15014c7db" />
-Running Thsi post synth file for simulation along with the sdf (delay file generated in the process) and the test bench file. 
-<img width="1920" height="478" alt="image" src="https://github.com/user-attachments/assets/0acc93b2-c689-4b36-b144-7ed197b2991e" />
-All the related code can be found here[/design/Day_2] & [[testbench/Day2](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/blob/main/testbench/counter_tb.v)]
+<img width="731" height="87" alt="Generated Files" src="https://github.com/user-attachments/assets/27de1462-71ec-470f-abbe-a2c15014c7db" />
+
+**Running post-synth simulation with the SDF delay file and testbench:**
+
+<img width="1920" height="478" alt="Post Synth Simulation" src="https://github.com/user-attachments/assets/0acc93b2-c689-4b36-b144-7ed197b2991e" />
+
+> 📁 All related code: [/design/Day_2](/) & [testbench/Day2](https://github.com/Priy-Priyesh16/VSD_FPGA_labs/blob/main/testbench/counter_tb.v)
+
+---
 
 # Day 3
-----
-A 5 stage pipelined RISC-V core namely RVMYTH has been used to implement the addition of first 9 numbers in number system. The code was initallay developed in TL-Verilog to be used in another platforms. It has been converted to verilog code and has been used to implement a full RTL to bitstream in Vivado. 
+
+## RISC-V Core on FPGA
+
+A 5-stage pipelined RISC-V core named **RVMYTH** has been used to implement the addition of the first 9 numbers. The code was initially developed in TL-Verilog and has been converted to Verilog for a full RTL-to-bitstream flow in Vivado.
+
+**RISC-V Core Blocks:**
+
+- Instruction Memory
+- Data Memory
+- Register Files
+- ALU
+
+**Execution Sequence:**
+
+| Stage | Description |
+|-------|-------------|
+| **1. Fetch** | PC fetches the instruction from Instruction Memory |
+| **2. Decode** | Control Unit breaks down the instruction; reads required registers from Register File |
+| **3. Execute** | ALU performs math or calculates the address |
+| **4. Memory** | For Load/Store instructions, ALU result is passed to Data Memory |
+| **5. Write Back** | Result is saved back into the Register File |
+
 ---
-RISC-V hasd multiple blocks namely 
-   - Instruction Memeory
-   - Data memory
-   - Register Files
-   - ALU
-----
-The execution on a RISC-V core happens in the following sequence:
-   1. Fetch: PC fetches the instruction from Instruction Memory.
-   2. Decode: Control Unit breaks down the instruction to determine operations (e.g., ALU, load/store) and reads required registers from the Register File.
-   3. Execute: The ALU performs math or calculates the address.
-   4. Memory: If it is a Load/Store instruction, the ALU result is passed to Data Memory to read/write data.
-   5. Write Back: The result is saved back into the Register File
-----
-# Day 3 Lab
-----
-## **Behavioural Simulation** 
-----
-After runnging the code in vivado's behavioural simulation this wave form was generated. which shows that the output generated is 45 (sum of first 9 numbers)
-<img width="1900" height="590" alt="image" src="https://github.com/user-attachments/assets/d0821770-9bbc-4ff8-8a83-9175ceade45b" />
 
-----
-## **Schematic Design**
-----
-After runnign the elaboration step teh schematic can be obtained
-<img width="1625" height="925" alt="image" src="https://github.com/user-attachments/assets/53d5bcc2-491e-4e87-a020-8f4e6711c752" />
+## Day 3 Lab
 
-We can also get the io planning done so that the pins can be assigned to the ports. The ouutput ports are not assigned as they will be viewd on an ILA. 
-<img width="1613" height="921" alt="image" src="https://github.com/user-attachments/assets/08101667-b77e-4f34-855a-8f1aa44d8aa1" />
+### Behavioural Simulation
 
-----
-## **Running Synthesis and Updating the Constraints**
-----
-> Constraints updated
-<img width="1072" height="552" alt="image" src="https://github.com/user-attachments/assets/1e2f9f8b-8839-4266-b9ec-df5923ab5dda" />
+After running the code in Vivado's behavioural simulation, the waveform confirms that the output is **45** (sum of the first 9 numbers):
 
-> Timing Summary post synthesis
-<img width="1305" height="346" alt="image" src="https://github.com/user-attachments/assets/4f4b8046-f7a8-4019-af5d-9c7ab9566fbd" />
+<img width="1900" height="590" alt="Behavioural Simulation" src="https://github.com/user-attachments/assets/d0821770-9bbc-4ff8-8a83-9175ceade45b" />
 
-> Utilization
-<img width="1099" height="626" alt="image" src="https://github.com/user-attachments/assets/82947624-08d7-4579-b025-1145f8e4d0e5" />
+---
 
-----
-During the entire flow of synthesis to Bitstream the design is converted into required logic and placed on the CLB of the fpga that is made up fo LUT, FLip Flops and MUX, ench clb getting connected via several interconnects, connecting one CLB to other and when nedded conecting the IO pads to CLB. 
+### Schematic Design
 
-----
-## **Running Implementation and generating Bitstream**
-----
+After running the elaboration step, the schematic is obtained:
 
-> POST implementation view
-<img width="1781" height="999" alt="image" src="https://github.com/user-attachments/assets/0ecaeffd-ffe3-4c67-b9c2-7b9f9de86be2" />
+<img width="1625" height="925" alt="Schematic" src="https://github.com/user-attachments/assets/53d5bcc2-491e-4e87-a020-8f4e6711c752" />
 
-----
+IO planning with pin assignments (output ports assigned to ILA):
 
-> Timing analysis after Implementation
-<img width="1327" height="356" alt="image" src="https://github.com/user-attachments/assets/ff5d20ab-d886-4814-a690-b067c986b91b" />
+<img width="1613" height="921" alt="IO Planning" src="https://github.com/user-attachments/assets/08101667-b77e-4f34-855a-8f1aa44d8aa1" />
 
-----
+---
 
-> Resource utilization report
-<img width="1521" height="647" alt="image" src="https://github.com/user-attachments/assets/d71cead4-6a7a-46f0-a9c8-89abc4e96e5d" />
+### Running Synthesis and Updating Constraints
 
-----
+| Step | Screenshot |
+|------|------------|
+| **Constraints Updated** | <img width="1072" height="552" alt="Constraints" src="https://github.com/user-attachments/assets/1e2f9f8b-8839-4266-b9ec-df5923ab5dda" /> |
+| **Timing Summary Post-Synthesis** | <img width="1305" height="346" alt="Timing Summary" src="https://github.com/user-attachments/assets/4f4b8046-f7a8-4019-af5d-9c7ab9566fbd" /> |
+| **Utilization** | <img width="1099" height="626" alt="Utilization" src="https://github.com/user-attachments/assets/82947624-08d7-4579-b025-1145f8e4d0e5" /> |
 
-> Power analysis after Implementation
-<img width="1082" height="562" alt="image" src="https://github.com/user-attachments/assets/3783e271-b9e0-479e-96c4-c8b054857a5a" />
+> During the entire synthesis-to-bitstream flow, the design is converted into required logic and placed on CLBs (made up of LUTs, Flip-Flops, and MUXes), with CLBs connected via interconnects and IO pads.
 
-----
+---
+
+### Running Implementation and Generating Bitstream
+
+| Step | Screenshot |
+|------|------------|
+| **Post-Implementation View** | <img width="1781" height="999" alt="Post Implementation" src="https://github.com/user-attachments/assets/0ecaeffd-ffe3-4c67-b9c2-7b9f9de86be2" /> |
+| **Timing Analysis After Implementation** | <img width="1327" height="356" alt="Timing Analysis" src="https://github.com/user-attachments/assets/ff5d20ab-d886-4814-a690-b067c986b91b" /> |
+| **Resource Utilization Report** | <img width="1521" height="647" alt="Resource Utilization" src="https://github.com/user-attachments/assets/d71cead4-6a7a-46f0-a9c8-89abc4e96e5d" /> |
+| **Power Analysis After Implementation** | <img width="1082" height="562" alt="Power Analysis" src="https://github.com/user-attachments/assets/3783e271-b9e0-479e-96c4-c8b054857a5a" /> |
+
+---
+
 # Day 4
-----
 
-SOFA (Skywater Opensource FPGAs) are a series of open-source FPGA IPs using the open-source Skywater 130nm PDK and OpenFPGA framework.
-This repository utilizes the FPGA1212_QLSOFA_HD_PNR FPGA IP design, capable of operating at a maximum frequency of 50MHz. The design features 1152 LUTs, 2304 Flip-flops, and 1152 soft adders. It is implemented using the OpenFPGA framework, through which various performance and implementation reports are generated.
+## SOFA — Skywater Open-Source FPGAs
 
-----
-# Day 4 LAB
-----
-After mapping the repo of SOFA. 
-reaching till the directory of ``` /SOFA/FPGA1212_QLSOFA_HD_PNR/  ```
-run the following command
-```
+SOFA (Skywater Opensource FPGAs) is a series of open-source FPGA IPs using the open-source **Skywater 130nm PDK** and **OpenFPGA** framework.
+
+This repository uses the **FPGA1212_QLSOFA_HD_PNR** FPGA IP design with the following specs:
+
+| Parameter | Value |
+|-----------|-------|
+| Max Frequency | 50 MHz |
+| LUTs | 1152 |
+| Flip-Flops | 2304 |
+| Soft Adders | 1152 |
+| Framework | OpenFPGA |
+
+---
+
+## Day 4 Lab
+
+### Running the SOFA Flow
+
+Navigate to the directory and run:
+
+```bash
+cd /SOFA/FPGA1212_QLSOFA_HD_PNR/
 make runOpenFPGA
 ```
-Once this is successful, it will genererate several files. 
-<img width="1908" height="256" alt="image" src="https://github.com/user-attachments/assets/66e80a89-8e00-4d3a-b2c4-fd8d30e56fa9" />
 
-> The openfpgashell.log is a file that has all kinds of information, like the commands it has run, differnet kinds of report like tming, area power , if you have provided .sdc you will get timing report. 
-<img width="1231" height="858" alt="image" src="https://github.com/user-attachments/assets/10dbb71e-40ed-4796-b8f0-2c6f14ca229c" />
-<img width="1410" height="468" alt="image" src="https://github.com/user-attachments/assets/4f58b487-f372-4b14-95b3-629a49e3ef92" />
+Generated output files:
 
-> To check the resource utilization one can use the vpr_stdout.log
-<img width="1874" height="184" alt="image" src="https://github.com/user-attachments/assets/7b543525-9f26-49f7-b08b-fa4e7138961f" />
-<img width="961" height="463" alt="image" src="https://github.com/user-attachments/assets/a235974f-7dc2-48de-af36-6a38799e10ba" />
-<img width="612" height="504" alt="image" src="https://github.com/user-attachments/assets/c9a48515-0a51-484b-bf2b-a73d61410265" />
+<img width="1908" height="256" alt="Generated Files" src="https://github.com/user-attachments/assets/66e80a89-8e00-4d3a-b2c4-fd8d30e56fa9" />
 
-## Running timing analysis.
-----
-Modifying the VPR Command to the following now 
-```
-vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --sdc_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/up_counter_day4/counter.sdc
-```
-<img width="1619" height="749" alt="image" src="https://github.com/user-attachments/assets/b65e236f-e2c1-4bab-85d4-89ff1d91b22b" />
+**`openfpgashell.log`** contains all commands run, plus timing, area, and power reports:
 
-----
-## Generating post Ipl Netlist
-----
-Modify the command inside "generate_testbench.openfpga"
-```
-vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --sdc_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/up_counter_day4/counter.sdc --gen_post_synthesis_netlist on
-```
-> We run the command and get the following files generated 
-<img width="1867" height="687" alt="image" src="https://github.com/user-attachments/assets/a4dd3579-4908-4ef0-93af-f463bb312a6b" />
+<img width="1231" height="858" alt="OpenFPGA Shell Log" src="https://github.com/user-attachments/assets/10dbb71e-40ed-4796-b8f0-2c6f14ca229c" />
+<img width="1410" height="468" alt="Log Detail" src="https://github.com/user-attachments/assets/4f58b487-f372-4b14-95b3-629a49e3ef92" />
 
-> Power Analysis using SOFA
-<img width="1497" height="537" alt="image" src="https://github.com/user-attachments/assets/707b06f1-3faf-429b-89e3-0c32d78dc661" />
-Update the device layout and chan width as per requirment.
->Update VPR commadn to include the .act and the technology map (45nm/ or as per your wish)
+**Resource utilization via `vpr_stdout.log`:**
 
-```
-vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --power --activity_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/latest/vpr_arch/up_counter/MIN_ROUTE_CHAN_WIDTH/up_counter_ace_out.act --tech_properties /home/kunalg123/Desktop/vtr-verilog-to-routing/vtr_flow/tech/PTM_45nm/45nm.xml
+<img width="1874" height="184" alt="VPR Stdout" src="https://github.com/user-attachments/assets/7b543525-9f26-49f7-b08b-fa4e7138961f" />
+<img width="961" height="463" alt="Utilization Detail" src="https://github.com/user-attachments/assets/a235974f-7dc2-48de-af36-6a38799e10ba" />
+<img width="612" height="504" alt="Utilization Summary" src="https://github.com/user-attachments/assets/c9a48515-0a51-484b-bf2b-a73d61410265" />
 
+---
+
+### Running Timing Analysis
+
+Modify the VPR command to include the SDC file:
+
+```bash
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} \
+  --clock_modeling ideal \
+  --device ${OPENFPGA_VPR_DEVICE_LAYOUT} \
+  --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} \
+  --absorb_buffer_luts off \
+  --sdc_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/up_counter_day4/counter.sdc
 ```
 
-> Post Impplemenation Simulation 
-<img width="1908" height="489" alt="image" src="https://github.com/user-attachments/assets/51f242f2-559d-46c6-aa7c-52befb761cdb" />
+<img width="1619" height="749" alt="Timing Analysis" src="https://github.com/user-attachments/assets/b65e236f-e2c1-4bab-85d4-89ff1d91b22b" />
 
------
+---
+
+### Generating Post-Implementation Netlist
+
+Modify `generate_testbench.openfpga` to add `--gen_post_synthesis_netlist on`:
+
+```bash
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} \
+  --clock_modeling ideal \
+  --device ${OPENFPGA_VPR_DEVICE_LAYOUT} \
+  --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} \
+  --absorb_buffer_luts off \
+  --sdc_file /home/.../counter.sdc \
+  --gen_post_synthesis_netlist on
+```
+
+Generated files:
+
+<img width="1867" height="687" alt="Post-Impl Files" src="https://github.com/user-attachments/assets/a4dd3579-4908-4ef0-93af-f463bb312a6b" />
+
+---
+
+### Power Analysis Using SOFA
+
+Update the VPR command to include the `.act` file and technology map:
+
+```bash
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} \
+  --clock_modeling ideal \
+  --device ${OPENFPGA_VPR_DEVICE_LAYOUT} \
+  --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} \
+  --absorb_buffer_luts off \
+  --power \
+  --activity_file /home/.../up_counter_ace_out.act \
+  --tech_properties /home/kunalg123/Desktop/vtr-verilog-to-routing/vtr_flow/tech/PTM_45nm/45nm.xml
+```
+
+<img width="1497" height="537" alt="Power Analysis" src="https://github.com/user-attachments/assets/707b06f1-3faf-429b-89e3-0c32d78dc661" />
+
+### Post-Implementation Simulation
+
+<img width="1908" height="489" alt="Post-Impl Simulation" src="https://github.com/user-attachments/assets/51f242f2-559d-46c6-aa7c-52befb761cdb" />
+
+---
+
 # Day 5
-----
 
-The RVMYTH design has been integrated with the custom SOFA FPGA fabric and processed through the complete OpenFPGA framework alongside the VTR flow. The execution of this flow produces a range of logs and reports, which are outlined in the following sections
+## RVMYTH on SOFA Fabric
 
------
+The RVMYTH design has been integrated with the custom SOFA FPGA fabric and processed through the complete OpenFPGA framework alongside the VTR flow. Execution of this flow produces a range of logs and reports outlined below.
 
-Faced the follwoingerror while implemeting  the logic as the code provide was a derived verilog code and had to be converted to the synthesisabel code. not sure if this is a codinf issue or a environment issue
+---
 
------
+## Day 5 Lab
+
+### Error Encountered
+
+An error was encountered during implementation. The code provided was a derived Verilog file and had to be converted to synthesisable code.
 
 ```
-priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA$ make runOpenFPGA
-make: *** No rule to make target 'runOpenFPGA'.  Stop.
-priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA$ cd FPGA1212_QLSOFA_HD_PNR/
-priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ make runOpenFPGA
-OPENFPGA_PATH=/home/kunalg123/Desktop/OpenFPGA
-shopt
- INFO (     MainThread) - Set up to run 2 Parallel threads
- INFO (     MainThread) - Currently running task FPGA1212_QLSOFA_HD_task
- INFO (     MainThread) - Removing run_dir run001
- INFO (     MainThread) - Removing run_dir latest
- INFO (     MainThread) - Task execution completed
- INFO (     MainThread) - Set up to run 2 Parallel threads
- INFO (     MainThread) - Currently running task FPGA1212_QLSOFA_HD_task
- INFO (     MainThread) - Created "run001" directory for current task run
- INFO (     MainThread) - Running "yosys_vpr" flow
- INFO (     MainThread) - Found 1 Architectures 1 Benchmarks & 1 Script Parameters
- INFO (     MainThread) - Created total 1 jobs
-
-ERROR (00_core_MIN_ROUTE_CHAN_WIDTH) - Failed to execute openfpga flow - 00_core_MIN_ROUTE_CHAN_WIDTH
-Traceback (most recent call last):
-  File "/home/kunalg123/Desktop/OpenFPGA/openfpga_flow/scripts/run_fpga_task.py", line 513, in run_single_script
-    raise subprocess.CalledProcessError(0, " ".join(command))
-subprocess.CalledProcessError: Command 'python3 /home/kunalg123/Desktop/OpenFPGA/openfpga_flow/scripts/run_fpga_flow.py /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/arch/vpr_arch.xml /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/rvmyth/myth_core_test.v --top_module core --run_dir /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH --fpga_flow yosys_vpr --openfpga_shell_template /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/generate_testbench.openfpga --openfpga_arch_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/arch/openfpga_arch.xml --openfpga_sim_setting_file /home/kunalg123/Desktop/OpenFPGA/openfpga_flow/openfpga_simulation_settings/auto_sim_openfpga.xml --external_fabric_key_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/arch/fabric_key.xml --openfpga_vpr_device_layout auto --openfpga_vpr_route_chan_width 180 --power --power_tech /home/kunalg123/Desktop/OpenFPGA/openfpga_flow/tech/PTM_45nm/45nm.xml --arch_variable_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/design_variables.yml --vpr_fpga_verilog --vpr_fpga_verilog_dir /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH --vpr_fpga_x2p_rename_illegal_port --TOP core' returned non-zero exit status 0.
-X X X X X X Failed to generate netlist X X X X X X
-priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ 
-priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ 
-priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ 
-priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ grep "Number of cells" ~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH/yosys_output.log
-   Number of cells:               5413
-priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ grep "Error [0-9]" ~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH/openfpgashell.log
+ERROR (00_core_MIN_ROUTE_CHAN_WIDTH) - Failed to execute openfpga flow
+...
 Error 1: Invalid key alias 'grid_io_top_top_12__13_'!
 Error 2: Command 'build_fabric' execution has fatal errors
-
 ```
-The erro rhas been resolved
-----
-<img width="1437" height="451" alt="image" src="https://github.com/user-attachments/assets/7a661750-4c44-484f-a46a-05bd29bf6ba2" />
-----
-<img width="1824" height="290" alt="image" src="https://github.com/user-attachments/assets/29664bff-4c16-48a4-a9e2-d16eab3d6eb3" />
-**These are the generated files which inlcude the timing and post impl files**
 
-> Timing - Slack
-<img width="1399" height="584" alt="image" src="https://github.com/user-attachments/assets/bf7d2258-8d8f-432b-a129-8e2c1e9af038" />
-> Timing - Hold
-<img width="1455" height="845" alt="image" src="https://github.com/user-attachments/assets/7904944b-d1a2-4fba-8d25-172440790443" />
-----
-
-<img width="1057" height="586" alt="image" src="https://github.com/user-attachments/assets/21a32480-614c-453d-a895-0eeea05b6c7e" />
-<img width="688" height="151" alt="image" src="https://github.com/user-attachments/assets/aba0dd5f-7d8d-4173-9e9a-1a3ba1cb3da7" />
-
-----
-
-## **POST Implementation Simulation**
-----
-<img width="1481" height="715" alt="image" src="https://github.com/user-attachments/assets/e48fd2fa-0887-415f-bcd7-14cd17b2d831" />
-
-----------
-#References
----
-VLSI System Design: https://www.vlsisystemdesign.com/ip/
-RISC-V based Microprocessor: https://github.com/shivanishah269/risc-v-core
-SOFA: https://github.com/lnis-uofu/SOFA
-OpenFPGA: https://openfpga.readthedocs.io/en/master/
-VPR: https://docs.verilogtorouting.org/en/latest/vpr/
-VTR: https://docs.verilogtorouting.org/en/latest/
+> ✅ The error has been resolved.
 
 ---
-#Acknlowledgement
+
+### Results After Resolution
+
+<img width="1437" height="451" alt="Resolved Output" src="https://github.com/user-attachments/assets/7a661750-4c44-484f-a46a-05bd29bf6ba2" />
+
+**Generated files including timing and post-implementation files:**
+
+<img width="1824" height="290" alt="Generated Files" src="https://github.com/user-attachments/assets/29664bff-4c16-48a4-a9e2-d16eab3d6eb3" />
+
+| Report | Screenshot |
+|--------|------------|
+| **Timing — Slack** | <img width="1399" height="584" alt="Timing Slack" src="https://github.com/user-attachments/assets/bf7d2258-8d8f-432b-a129-8e2c1e9af038" /> |
+| **Timing — Hold** | <img width="1455" height="845" alt="Timing Hold" src="https://github.com/user-attachments/assets/7904944b-d1a2-4fba-8d25-172440790443" /> |
+
+<img width="1057" height="586" alt="Result Overview" src="https://github.com/user-attachments/assets/21a32480-614c-453d-a895-0eeea05b6c7e" />
+<img width="688" height="151" alt="Summary" src="https://github.com/user-attachments/assets/aba0dd5f-7d8d-4173-9e9a-1a3ba1cb3da7" />
+
 ---
-   -Kunal Ghosh[https://github.com/kunalg123]
-   -Nanditha Rao[https://github.com/nandithaec]
+
+### Post-Implementation Simulation
+
+<img width="1481" height="715" alt="Post-Impl Simulation" src="https://github.com/user-attachments/assets/e48fd2fa-0887-415f-bcd7-14cd17b2d831" />
+
+---
+
+# References
+
+- [VLSI System Design](https://www.vlsisystemdesign.com/ip/)
+- [RISC-V Based Microprocessor](https://github.com/shivanishah269/risc-v-core)
+- [SOFA](https://github.com/lnis-uofu/SOFA)
+- [OpenFPGA](https://openfpga.readthedocs.io/en/master/)
+- [VPR](https://docs.verilogtorouting.org/en/latest/vpr/)
+- [VTR](https://docs.verilogtorouting.org/en/latest/)
+
+---
+
+# Acknowledgements
+
+- [Kunal Ghosh](https://github.com/kunalg123)
+- [Nanditha Rao](https://github.com/nandithaec)
