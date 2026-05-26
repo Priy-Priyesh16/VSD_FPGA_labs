@@ -412,3 +412,8 @@ Error 1: Invalid key alias 'grid_io_top_top_12__13_'!
 Error 2: Command 'build_fabric' execution has fatal errors
 
 ```
+The erro rhas been resolved
+----
+<img width="1437" height="451" alt="image" src="https://github.com/user-attachments/assets/7a661750-4c44-484f-a46a-05bd29bf6ba2" />
+----
+
