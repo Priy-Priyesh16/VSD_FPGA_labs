@@ -374,7 +374,9 @@ vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPE
 The RVMYTH design has been integrated with the custom SOFA FPGA fabric and processed through the complete OpenFPGA framework alongside the VTR flow. The execution of this flow produces a range of logs and reports, which are outlined in the following sections
 
 -----
-Faced teh follwoingerror while implemeting  the logic as the code provide was a derived verilog code and had to be converted to the synthesisabel code. not sure if this is a codinf issue or a environment issue
+
+Faced the follwoingerror while implemeting  the logic as the code provide was a derived verilog code and had to be converted to the synthesisabel code. not sure if this is a codinf issue or a environment issue
+
 -----
 
 ```
@@ -416,4 +418,5 @@ The erro rhas been resolved
 ----
 <img width="1437" height="451" alt="image" src="https://github.com/user-attachments/assets/7a661750-4c44-484f-a46a-05bd29bf6ba2" />
 ----
-
+<img width="1824" height="290" alt="image" src="https://github.com/user-attachments/assets/29664bff-4c16-48a4-a9e2-d16eab3d6eb3" />
+**These are the generated files which inlcude the timing and post impl files**
