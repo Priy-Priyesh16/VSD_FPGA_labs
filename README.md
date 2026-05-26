@@ -255,6 +255,8 @@ The execution on a RISC-V core happens in the following sequence:
    4. Memory: If it is a Load/Store instruction, the ALU result is passed to Data Memory to read/write data.
    5. Write Back: The result is saved back into the Register File
 ----
+# Day 3 Lab
+----
 ## **Behavioural Simulation** 
 ----
 After runnging the code in vivado's behavioural simulation this wave form was generated. which shows that the output generated is 45 (sum of first 9 numbers)
@@ -310,3 +312,142 @@ During the entire flow of synthesis to Bitstream the design is converted into re
 # Day 4
 ----
 
+SOFA (Skywater Opensource FPGAs) are a series of open-source FPGA IPs using the open-source Skywater 130nm PDK and OpenFPGA framework.
+This repository utilizes the FPGA1212_QLSOFA_HD_PNR FPGA IP design, capable of operating at a maximum frequency of 50MHz. The design features 1152 LUTs, 2304 Flip-flops, and 1152 soft adders. It is implemented using the OpenFPGA framework, through which various performance and implementation reports are generated.
+
+----
+# Day 4 LAB
+----
+After mapping the repo of SOFA. 
+reaching till the directory of ``` /SOFA/FPGA1212_QLSOFA_HD_PNR/  ```
+run the following command
+```
+make runOpenFPGA
+```
+Once this is successful, it will genererate several files. 
+<img width="1908" height="256" alt="image" src="https://github.com/user-attachments/assets/66e80a89-8e00-4d3a-b2c4-fd8d30e56fa9" />
+
+> The openfpgashell.log is a file that has all kinds of information, like the commands it has run, differnet kinds of report like tming, area power , if you have provided .sdc you will get timing report. 
+<img width="1231" height="858" alt="image" src="https://github.com/user-attachments/assets/10dbb71e-40ed-4796-b8f0-2c6f14ca229c" />
+<img width="1410" height="468" alt="image" src="https://github.com/user-attachments/assets/4f58b487-f372-4b14-95b3-629a49e3ef92" />
+
+> To check the resource utilization one can use the vpr_stdout.log
+<img width="1874" height="184" alt="image" src="https://github.com/user-attachments/assets/7b543525-9f26-49f7-b08b-fa4e7138961f" />
+<img width="961" height="463" alt="image" src="https://github.com/user-attachments/assets/a235974f-7dc2-48de-af36-6a38799e10ba" />
+<img width="612" height="504" alt="image" src="https://github.com/user-attachments/assets/c9a48515-0a51-484b-bf2b-a73d61410265" />
+
+## Running timing analysis.
+----
+Modifying the VPR Command to the following now 
+```
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --sdc_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/up_counter_day4/counter.sdc
+```
+<img width="1619" height="749" alt="image" src="https://github.com/user-attachments/assets/b65e236f-e2c1-4bab-85d4-89ff1d91b22b" />
+
+----
+## Generating post Ipl Netlist
+----
+Modify the command inside "generate_testbench.openfpga"
+```
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --sdc_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/up_counter_day4/counter.sdc --gen_post_synthesis_netlist on
+```
+> We run the command and get the following files generated 
+<img width="1867" height="687" alt="image" src="https://github.com/user-attachments/assets/a4dd3579-4908-4ef0-93af-f463bb312a6b" />
+
+> Power Analysis using SOFA
+<img width="1497" height="537" alt="image" src="https://github.com/user-attachments/assets/707b06f1-3faf-429b-89e3-0c32d78dc661" />
+Update the device layout and chan width as per requirment.
+>Update VPR commadn to include the .act and the technology map (45nm/ or as per your wish)
+
+```
+vpr ${VPR_ARCH_FILE} ${VPR_TESTBENCH_BLIF} --clock_modeling ideal --device ${OPENFPGA_VPR_DEVICE_LAYOUT} --route_chan_width ${OPENFPGA_VPR_ROUTE_CHAN_WIDTH} --absorb_buffer_luts off --power --activity_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_4/SOFA/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/latest/vpr_arch/up_counter/MIN_ROUTE_CHAN_WIDTH/up_counter_ace_out.act --tech_properties /home/kunalg123/Desktop/vtr-verilog-to-routing/vtr_flow/tech/PTM_45nm/45nm.xml
+
+```
+
+> Post Impplemenation Simulation 
+<img width="1908" height="489" alt="image" src="https://github.com/user-attachments/assets/51f242f2-559d-46c6-aa7c-52befb761cdb" />
+
+-----
+# Day 5
+----
+
+The RVMYTH design has been integrated with the custom SOFA FPGA fabric and processed through the complete OpenFPGA framework alongside the VTR flow. The execution of this flow produces a range of logs and reports, which are outlined in the following sections
+
+-----
+
+Faced the follwoingerror while implemeting  the logic as the code provide was a derived verilog code and had to be converted to the synthesisabel code. not sure if this is a codinf issue or a environment issue
+
+-----
+
+```
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA$ make runOpenFPGA
+make: *** No rule to make target 'runOpenFPGA'.  Stop.
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA$ cd FPGA1212_QLSOFA_HD_PNR/
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ make runOpenFPGA
+OPENFPGA_PATH=/home/kunalg123/Desktop/OpenFPGA
+shopt
+ INFO (     MainThread) - Set up to run 2 Parallel threads
+ INFO (     MainThread) - Currently running task FPGA1212_QLSOFA_HD_task
+ INFO (     MainThread) - Removing run_dir run001
+ INFO (     MainThread) - Removing run_dir latest
+ INFO (     MainThread) - Task execution completed
+ INFO (     MainThread) - Set up to run 2 Parallel threads
+ INFO (     MainThread) - Currently running task FPGA1212_QLSOFA_HD_task
+ INFO (     MainThread) - Created "run001" directory for current task run
+ INFO (     MainThread) - Running "yosys_vpr" flow
+ INFO (     MainThread) - Found 1 Architectures 1 Benchmarks & 1 Script Parameters
+ INFO (     MainThread) - Created total 1 jobs
+
+ERROR (00_core_MIN_ROUTE_CHAN_WIDTH) - Failed to execute openfpga flow - 00_core_MIN_ROUTE_CHAN_WIDTH
+Traceback (most recent call last):
+  File "/home/kunalg123/Desktop/OpenFPGA/openfpga_flow/scripts/run_fpga_task.py", line 513, in run_single_script
+    raise subprocess.CalledProcessError(0, " ".join(command))
+subprocess.CalledProcessError: Command 'python3 /home/kunalg123/Desktop/OpenFPGA/openfpga_flow/scripts/run_fpga_flow.py /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/arch/vpr_arch.xml /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/BENCHMARK/rvmyth/myth_core_test.v --top_module core --run_dir /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH --fpga_flow yosys_vpr --openfpga_shell_template /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/generate_testbench.openfpga --openfpga_arch_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/arch/openfpga_arch.xml --openfpga_sim_setting_file /home/kunalg123/Desktop/OpenFPGA/openfpga_flow/openfpga_simulation_settings/auto_sim_openfpga.xml --external_fabric_key_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/arch/fabric_key.xml --openfpga_vpr_device_layout auto --openfpga_vpr_route_chan_width 180 --power --power_tech /home/kunalg123/Desktop/OpenFPGA/openfpga_flow/tech/PTM_45nm/45nm.xml --arch_variable_file /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/design_variables.yml --vpr_fpga_verilog --vpr_fpga_verilog_dir /home/priyeshpriyadarshi1600/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH --vpr_fpga_x2p_rename_illegal_port --TOP core' returned non-zero exit status 0.
+X X X X X X Failed to generate netlist X X X X X X
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ 
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ 
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ 
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ grep "Number of cells" ~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH/yosys_output.log
+   Number of cells:               5413
+priyeshpriyadarshi1600@vsdfpga-02:~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR$ grep "Error [0-9]" ~/vtr_flow_lab/Day_5/SOFA/FPGA1212_QLSOFA_HD_PNR/FPGA1212_QLSOFA_HD_task/run001/vpr_arch/core/MIN_ROUTE_CHAN_WIDTH/openfpgashell.log
+Error 1: Invalid key alias 'grid_io_top_top_12__13_'!
+Error 2: Command 'build_fabric' execution has fatal errors
+
+```
+The erro rhas been resolved
+----
+<img width="1437" height="451" alt="image" src="https://github.com/user-attachments/assets/7a661750-4c44-484f-a46a-05bd29bf6ba2" />
+----
+<img width="1824" height="290" alt="image" src="https://github.com/user-attachments/assets/29664bff-4c16-48a4-a9e2-d16eab3d6eb3" />
+**These are the generated files which inlcude the timing and post impl files**
+
+> Timing - Slack
+<img width="1399" height="584" alt="image" src="https://github.com/user-attachments/assets/bf7d2258-8d8f-432b-a129-8e2c1e9af038" />
+> Timing - Hold
+<img width="1455" height="845" alt="image" src="https://github.com/user-attachments/assets/7904944b-d1a2-4fba-8d25-172440790443" />
+----
+
+<img width="1057" height="586" alt="image" src="https://github.com/user-attachments/assets/21a32480-614c-453d-a895-0eeea05b6c7e" />
+<img width="688" height="151" alt="image" src="https://github.com/user-attachments/assets/aba0dd5f-7d8d-4173-9e9a-1a3ba1cb3da7" />
+
+----
+
+## **POST Implementation Simulation**
+----
+<img width="1481" height="715" alt="image" src="https://github.com/user-attachments/assets/e48fd2fa-0887-415f-bcd7-14cd17b2d831" />
+
+----------
+#References
+---
+VLSI System Design: https://www.vlsisystemdesign.com/ip/
+RISC-V based Microprocessor: https://github.com/shivanishah269/risc-v-core
+SOFA: https://github.com/lnis-uofu/SOFA
+OpenFPGA: https://openfpga.readthedocs.io/en/master/
+VPR: https://docs.verilogtorouting.org/en/latest/vpr/
+VTR: https://docs.verilogtorouting.org/en/latest/
+
+---
+#Acknlowledgement
+---
+   -Kunal Ghosh[https://github.com/kunalg123]
+   -Nanditha Rao[https://github.com/nandithaec]
