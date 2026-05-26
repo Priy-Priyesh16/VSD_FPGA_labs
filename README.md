@@ -429,3 +429,25 @@ The erro rhas been resolved
 
 <img width="1057" height="586" alt="image" src="https://github.com/user-attachments/assets/21a32480-614c-453d-a895-0eeea05b6c7e" />
 <img width="688" height="151" alt="image" src="https://github.com/user-attachments/assets/aba0dd5f-7d8d-4173-9e9a-1a3ba1cb3da7" />
+
+----
+
+## **POST Implementation Simulation**
+----
+<img width="1481" height="715" alt="image" src="https://github.com/user-attachments/assets/e48fd2fa-0887-415f-bcd7-14cd17b2d831" />
+
+----------
+#References
+---
+VLSI System Design: https://www.vlsisystemdesign.com/ip/
+RISC-V based Microprocessor: https://github.com/shivanishah269/risc-v-core
+SOFA: https://github.com/lnis-uofu/SOFA
+OpenFPGA: https://openfpga.readthedocs.io/en/master/
+VPR: https://docs.verilogtorouting.org/en/latest/vpr/
+VTR: https://docs.verilogtorouting.org/en/latest/
+
+---
+#Acknlowledgement
+---
+   -Kunal Ghosh[https://github.com/kunalg123]
+   -Nanditha Rao[https://github.com/nandithaec]
